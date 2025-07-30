@@ -16,8 +16,8 @@ extends CharacterBody3D
 @onready var camera : Camera3D = $"SubViewportContainer/SubViewport/head/Camera3D"
 @onready var arm_cam : Camera3D = $"SubViewportContainer/SubViewport2/Camera3D2"
 
-@onready var target_head : Node3D = $"target_head"
-@onready var target_camera : Node3D = $"target_head/target_camera"
+@onready var target_head : Marker3D = $"target_head"
+@onready var target_camera : Marker3D = $"target_head/target_camera"
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
