@@ -26,5 +26,3 @@ func _on_body_entered(body: Node3D) -> void:
 		door_inst.global_transform = global_transform
 		door_inst.apply_impulse(-Lib.player.transform.basis.z * 150 + (Vector3.UP * 30))
 		door_inst.apply_torque_impulse(Vector3(randf_range(-100, 100), randf_range(-100, 100), randf_range(-100, 100)))
-		
-		queue_free()

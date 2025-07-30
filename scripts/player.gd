@@ -12,8 +12,12 @@ extends CharacterBody3D
 
 @export var lookspeed : float = 0.1
 
-@onready var head : Node3D = $"head"
-@onready var camera : Camera3D = $"head/Camera3D"
+@onready var head : Node3D = $"SubViewportContainer/SubViewport/head"
+@onready var camera : Camera3D = $"SubViewportContainer/SubViewport/head/Camera3D"
+@onready var arm_cam : Camera3D = $"SubViewportContainer/SubViewport2/Camera3D2"
+
+@onready var target_head : Node3D = $"target_head"
+@onready var target_camera : Node3D = $"target_head/target_camera"
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -25,17 +29,21 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 			rotate_y(deg_to_rad(-event.relative.x * lookspeed))
-			head.rotate_x(deg_to_rad(-event.relative.y * lookspeed))
-			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+			target_head.rotate_x(deg_to_rad(-event.relative.y * lookspeed))
+			target_head.rotation.x = clamp(target_head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 	elif event is InputEventKey:
 		if event.keycode == KEY_ESCAPE:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _physics_process(delta: float) -> void:
+	# Setting cameras
+	head.global_transform = target_head.global_transform
+	camera.global_transform = target_camera.global_transform
+	arm_cam.global_transform = target_camera.global_transform
+	
 	# Movement
 	var wishdir = Vector3(Input.get_axis("left", "right") * side_speed, 0, Input.get_axis("forward", "backward") * forward_speed).normalized()
-	wishdir = wishdir.rotated(Vector3.UP, head.global_rotation.y)
-	
+	wishdir = wishdir.rotated(Vector3.UP, target_head.global_rotation.y)
 		
 	var current_speed = velocity.dot(wishdir)
 	var add_speed = clamp(max_speed - current_speed, 0, max_accel * delta)
@@ -44,10 +52,11 @@ func _physics_process(delta: float) -> void:
 	# holy magic number
 	camera.fov = remap(velocity.length(), 0, max_speed, 70, 100)
 	camera.fov = clamp(camera.fov, 70, 100)
+	arm_cam.fov = camera.fov
 	
-	var target_lean_rot = velocity.rotated(Vector3.UP, -camera.global_rotation.y).x / lean_div
+	var target_lean_rot = velocity.rotated(Vector3.UP, -target_camera.global_rotation.y).x / lean_div
 	target_lean_rot = clamp(target_lean_rot, -max_lean_deg, max_lean_deg)
-	camera.rotation.z = deg_to_rad(target_lean_rot)
+	target_camera.rotation.z = deg_to_rad(target_lean_rot)
 	
 	velocity /= friction
 	
