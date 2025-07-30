@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca6fb11dwsv8k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dke3y"]
+size = Vector3(0.1, 1.791, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v2gqq"]
+size = Vector3(0.1, 1.791, 1)
+
+[node name="PhysDoor" type="RigidBody3D"]
+mass = 10.0
+gravity_scale = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dke3y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_v2gqq")

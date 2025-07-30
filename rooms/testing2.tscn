@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbtfmsiur7fky"]
+
+[ext_resource type="Texture2D" uid="uid://buehjaxoeosul" path="res://addons/kenney_prototype_textures/orange/texture_02.png" id="1_12vt3"]
+[ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="1_iuwjj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jtl8"]
+albedo_texture = ExtResource("1_12vt3")
+
+[node name="Testing" type="Node3D"]
+transform = Transform3D(2.32422, 0, 0, 0, 2.32422, 0, 0, 0, 2.32422, 0, 0, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.379269, -2.58472)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.440186, 1.62967, -0.149078)
+size = Vector3(7.5, 4.5, 5.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.440186, 1.62967, -0.149078)
+operation = 2
+size = Vector3(7, 4, 5)
+material = SubResource("StandardMaterial3D_0jtl8")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0551856, 0.584669, 2.59092)
+operation = 2
+size = Vector3(1.11121, 1.89465, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0551856, 0.584669, -2.73504)
+operation = 2
+size = Vector3(1.11121, 1.89465, 1)
+
+[node name="Door" parent="." instance=ExtResource("1_iuwjj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0472309, 0.901669, -5.38997)

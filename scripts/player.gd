@@ -18,6 +18,8 @@ extends CharacterBody3D
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
+	Lib.player = self
+	
 	max_accel *= max_speed
 
 func _input(event: InputEvent) -> void:
