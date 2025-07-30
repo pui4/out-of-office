@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://xt4p88knjhar"]
+[gd_scene load_steps=7 format=3 uid="uid://xt4p88knjhar"]
+
+[ext_resource type="Texture2D" uid="uid://oo63yf8rs3jd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_lvjdj"]
+[ext_resource type="PackedScene" uid="uid://c6fbbsp7rem6o" path="res://assets/player.tscn" id="2_rdi1l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txpwr"]
+albedo_texture = ExtResource("1_lvjdj")
+uv1_triplanar = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lvjdj"]
+
+[sub_resource type="Sky" id="Sky_rdi1l"]
+sky_material = SubResource("ProceduralSkyMaterial_lvjdj")
+
+[sub_resource type="Environment" id="Environment_txpwr"]
+background_mode = 2
+sky = SubResource("Sky_rdi1l")
 
 [node name="debug" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(200, 0.5, 200)
+material = SubResource("StandardMaterial3D_txpwr")
+
+[node name="Player" parent="." instance=ExtResource("2_rdi1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76354, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.812084, 0.583541, 0, -0.583541, 0.812084, 0, 5.63448, 3.83374)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_txpwr")
