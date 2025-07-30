@@ -2,8 +2,8 @@ extends CharacterBody3D
 
 @export var forward_speed : float = 1
 @export var side_speed : float = 1
-@export var max_speed : float = 10
-@export var max_accel : float = 5
+@export var max_speed : float = 20
+@export var max_accel : float = 20
 @export var friction : float = 1.1
 @export var max_lean_deg : float = 7
 @export var lean_div : float = 2.5
@@ -37,9 +37,10 @@ func _physics_process(delta: float) -> void:
 	var add_speed = clamp(max_speed - current_speed, 0, max_accel * delta)
 	velocity = velocity + add_speed * wishdir
 	
-	camera.fov = remap(velocity.length(), 0, 5, 70, 100)
+	# holy magic number
+	camera.fov = remap(velocity.length(), 0, max_speed, 70, 100)
 	camera.fov = clamp(camera.fov, 70, 100)
-	print(camera.fov)
+	print(current_speed)
 	
 	var target_lean_rot = velocity.rotated(Vector3.UP, -camera.global_rotation.y).x / lean_div
 	target_lean_rot = clamp(target_lean_rot, -max_lean_deg, max_lean_deg)
