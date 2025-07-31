@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 	time_txt.text = "[wave][center]TIME: %s:%s" % [mins, "%0*d" % [2, secs]]
 
 func _on_increase_time(secs : float) -> void:
+	anim.stop()
 	var mins : int = floor(secs / 60)
 	var new_secs : int = secs - mins * 60
 	plus_txt.text = "+%s:%s" % [mins, "%0*d" % [2, new_secs]]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c25ch24yjwp1r"]
+[gd_scene load_steps=7 format=3 uid="uid://c25ch24yjwp1r"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_46snf"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_pqxjg"]
 [ext_resource type="PackedScene" path="res://modules/T split.tscn" id="3_en8t0"]
 [ext_resource type="PackedScene" path="res://modules/dead end.tscn" id="4_8g6ng"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="5_pqxjg"]
+[ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="6_en8t0"]
 
 [node name="T-left" type="Node3D"]
 
@@ -25,3 +26,9 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 20, 0, -
 
 [node name="Door" parent="." instance=ExtResource("5_pqxjg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, -12)
+
+[node name="RandomTaskSpawner" parent="." instance=ExtResource("6_en8t0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 6)
+
+[node name="RandomTaskSpawner2" parent="." instance=ExtResource("6_en8t0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 6)

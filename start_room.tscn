@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgu47g221aphv"]
+
+[ext_resource type="Script" uid="uid://dqjaqtftrwb7g" path="res://scripts/start_room.gd" id="1_rkvpa"]
+[ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_y61b1"]
+[ext_resource type="PackedScene" uid="uid://c6fbbsp7rem6o" path="res://assets/player.tscn" id="2_x135f"]
+[ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_rkvpa"]
+[ext_resource type="PackedScene" uid="uid://0lcgia6x0vj" path="res://assets/post_process.tscn" id="5_eqsgk"]
+
+[node name="StartRoom" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_x135f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 0)
+
+[node name="Room" type="Node3D" parent="."]
+script = ExtResource("1_rkvpa")
+
+[node name="DoorEnd" parent="Room" instance=ExtResource("1_y61b1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="DoorEnd2" parent="Room" instance=ExtResource("1_y61b1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 0)
+
+[node name="Door" parent="Room" instance=ExtResource("3_rkvpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="PostProcessing" parent="." instance=ExtResource("5_eqsgk")]

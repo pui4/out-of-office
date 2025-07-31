@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2wrvh1cf2r80"]
+[gd_scene load_steps=5 format=3 uid="uid://d2wrvh1cf2r80"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_3gv8q"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_i5sfh"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_i5sfh"]
+[ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="4_1oe8a"]
 
 [node name="Room1" type="Node3D"]
 
@@ -20,3 +21,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28, 0,
 
 [node name="Door" parent="." instance=ExtResource("3_i5sfh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1437, 0, 0)
+
+[node name="RandomTaskSpawner" parent="." instance=ExtResource("4_1oe8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0624, 2.38419e-07, 2.92801)
+
+[node name="RandomTaskSpawner2" parent="." instance=ExtResource("4_1oe8a")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.06238, 2.38419e-07, -3.07199)
