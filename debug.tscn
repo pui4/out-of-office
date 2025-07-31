@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://xt4p88knjhar"]
+[gd_scene load_steps=7 format=3 uid="uid://xt4p88knjhar"]
 
 [ext_resource type="Texture2D" uid="uid://oo63yf8rs3jd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_lvjdj"]
 [ext_resource type="PackedScene" uid="uid://c6fbbsp7rem6o" path="res://assets/player.tscn" id="2_rdi1l"]
 [ext_resource type="PackedScene" uid="uid://b6cs7lhsj08hi" path="res://rooms/testing.tscn" id="3_rdi1l"]
 [ext_resource type="PackedScene" uid="uid://0lcgia6x0vj" path="res://assets/post_process.tscn" id="4_txpwr"]
+[ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="5_16g7q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txpwr"]
 albedo_texture = ExtResource("1_lvjdj")
@@ -27,4 +28,20 @@ transform = Transform3D(2.32422, 0, 0, 0, 2.32422, 0, 0, 0, 2.32422, 12.377, 1.1
 [node name="PostProcessing" parent="." instance=ExtResource("4_txpwr")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.318082, 0.948063, 0, -0.948063, -0.318082, 0, 11.9136, 0)
+transform = Transform3D(1, 0, 0, 0, -0.685475, 0.728096, 0, -0.728096, -0.685475, 0, 5.03453, 0)
+visible = false
+
+[node name="RandomTaskSpawner" parent="." instance=ExtResource("5_16g7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.34678, 0.25, -6.28562)
+
+[node name="RandomTaskSpawner2" parent="." instance=ExtResource("5_16g7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.934, 0.25, -7.05464)
+
+[node name="RandomTaskSpawner3" parent="." instance=ExtResource("5_16g7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35254, 0.25, -13.8344)
+
+[node name="RandomTaskSpawner4" parent="." instance=ExtResource("5_16g7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1751, 0.25, -11.4594)
+
+[node name="RandomTaskSpawner5" parent="." instance=ExtResource("5_16g7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1751, 0.25, -4.16137)

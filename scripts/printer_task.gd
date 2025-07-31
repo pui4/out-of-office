@@ -17,4 +17,5 @@ func _on_interaction(hit : Node3D) -> void:
 		done_sfx.play_random()
 		red_light.hide()
 		green_light.show()
+		Lib.increase_time(10)
 		done = true

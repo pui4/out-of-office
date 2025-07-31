@@ -1,9 +1,10 @@
 extends StaticBody3D
 
-@export var imgs : Array[String] = ["stink"]
+@export var imgs : Array[String] = ["stink", "penis", "face", "ben"]
 
 @onready var sprite : Sprite3D = $"Sprite3D"
 @onready var anim : AnimationPlayer = $"AnimationPlayer"
+@onready var sfx : AudioStreamPlayer3D = $"AudioStreamPlayer3D"
 
 var done : bool
 
@@ -17,4 +18,9 @@ func _ready() -> void:
 func _on_interaction(hit : Node3D) -> void:
 	if hit == self and not done:
 		anim.play("wipe_board")
+		sfx.play()
+		Lib.increase_time(10)
 		done = true
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	sfx.stop()

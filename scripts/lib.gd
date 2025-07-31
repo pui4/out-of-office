@@ -7,6 +7,7 @@ extends Node
 @export var base_time : float = 120
 
 signal task_interaction
+signal time_increased
 
 func _ready() -> void:
 	time = Timer.new()
@@ -14,3 +15,10 @@ func _ready() -> void:
 	time.wait_time = base_time
 	
 	time.start() # TODO: Replace this to start when the game loads
+
+func increase_time(secs: float) -> void:
+	var old_time : float = time.time_left
+	time.stop()
+	time.wait_time = old_time + secs
+	time.start()
+	time_increased.emit(secs)
