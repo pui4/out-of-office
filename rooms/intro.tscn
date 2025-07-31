@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dsu0ao84mfswy"]
+[gd_scene load_steps=15 format=3 uid="uid://dsu0ao84mfswy"]
 
 [ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="1_n20gm"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_xy2ur"]
@@ -10,6 +10,46 @@
 [ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="8_gch8k"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="9_qbala"]
 [ext_resource type="ArrayMesh" uid="uid://by4y5vyovn1ce" path="res://meshes/assets_exit sign.res" id="10_pi5aw"]
+[ext_resource type="PackedScene" uid="uid://bqw0knrt75wxm" path="res://billboard test.tscn" id="11_pi5aw"]
+
+[sub_resource type="Animation" id="Animation_qbala"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(9.23244, -5, -6)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.46443, 1.44413, 1.95552)]
+}
 
 [sub_resource type="Animation" id="Animation_gch8k"]
 resource_name = "cutscene"
@@ -49,45 +89,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(9.23244, -5, -6), Vector3(9.232, 0, -6)]
-}
-
-[sub_resource type="Animation" id="Animation_qbala"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -1.5708, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Door:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(9.23244, -5, -6)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Camera3D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.46443, 1.44413, 1.95552)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rgan4"]
@@ -231,7 +232,7 @@ transform = Transform3D(0.898718, 0, -0.438528, 0, 1, 0, 0.438528, 0, 0.898718, 
 [node name="cutscene props" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="cutscene props"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.46443, 1.44413, 1.95552)
+transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, 1.46443, 1.44413, 1.95552)
 fov = 82.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene props"]
@@ -246,3 +247,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23244, -5, -6)
 transform = Transform3D(-3.13411e-08, 0, -0.215, 0, 0.358, 0, 0.717, 0, -9.39795e-09, 0, 4, -0.0946622)
 mesh = ExtResource("10_pi5aw")
 skeleton = NodePath("../..")
+
+[node name="BillboardTest" parent="." instance=ExtResource("11_pi5aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.2232)
