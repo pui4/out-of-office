@@ -9,21 +9,6 @@ albedo_texture = ExtResource("1_uex0r")
 emission_enabled = true
 emission_texture = ExtResource("1_uex0r")
 
-[sub_resource type="Animation" id="Animation_ulyft"]
-resource_name = "flicker"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SpotLight3D:light_energy")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.335528, 0.402194, 0.468861, 0.535528, 0.602194, 0.666667, 0.668861, 0.733333, 0.8, 0.866667, 0.933333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [2.0, 1.091, 0.727, 0.182, 1.273, 2.0, 2.0, 1.091, 0.727, 0.182, 1.273, 2.0, 2.0, 1.091, 0.727, 0.182, 1.273, 2.0]
-}
-
 [sub_resource type="Animation" id="Animation_x4am6"]
 length = 0.001
 tracks/0/type = "value"
@@ -37,6 +22,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_ulyft"]
+resource_name = "flicker"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpotLight3D:light_energy")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.335528, 0.402194, 0.468861, 0.535528, 0.602194, 0.666667, 0.668861, 0.733333, 0.8, 0.866667, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 1.091, 0.727, 0.182, 1.273, 2.0, 2.0, 1.091, 0.727, 0.182, 1.273, 2.0, 2.0, 1.091, 0.727, 0.182, 1.273, 2.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kr3yh"]

@@ -10,7 +10,7 @@ extends CharacterBody3D
 @export var max_lean_deg : float = 7
 @export var lean_div : float = -4
 
-@export var lookspeed : float = 0.5
+@export var lookspeed : float = 0.1
 
 @onready var head : Node3D = $"SubViewportContainer/SubViewport/head"
 @onready var camera : Camera3D = $"SubViewportContainer/SubViewport/head/Camera3D"
