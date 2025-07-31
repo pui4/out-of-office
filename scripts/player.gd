@@ -23,6 +23,8 @@ extends CharacterBody3D
 
 @onready var footsteps_sfx : RandomSound = $"FootstepSFX"
 
+@onready var raycast : RayCast3D = $"SubViewportContainer/SubViewport/head/Camera3D/RayCast3D"
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Lib.player = self
@@ -79,3 +81,9 @@ func _physics_process(delta: float) -> void:
 	elif wishdir == Vector3.ZERO:
 		footsteps_sfx.loop = false
 		footsteps_sfx.stop_random()
+		
+	# Check for interactions
+	if Input.is_action_just_pressed("interact") and raycast.is_colliding():
+		var hit : Node3D = raycast.get_collider()
+		if hit.is_in_group("task"):
+			Lib.task_interaction.emit(hit)

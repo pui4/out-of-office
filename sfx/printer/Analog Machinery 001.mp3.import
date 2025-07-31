@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwtn6ffwyyj4t"
+path="res://.godot/imported/Analog Machinery 001.mp3-d0a1f26683a8f127b127d075a9a751db.mp3str"
+
+[deps]
+
+source_file="res://sfx/printer/Analog Machinery 001.mp3"
+dest_files=["res://.godot/imported/Analog Machinery 001.mp3-d0a1f26683a8f127b127d075a9a751db.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -56,6 +56,9 @@ transform = Transform3D(-3.32145e-09, 0, -0.075986, 0, 0.075986, 0, 0.075986, 0,
 
 [node name="player" parent="SubViewportContainer/SubViewport/head/Camera3D/arms" instance=ExtResource("2_3mip4")]
 
+[node name="RayCast3D" type="RayCast3D" parent="SubViewportContainer/SubViewport/head/Camera3D"]
+target_position = Vector3(0, 0, -2)
+
 [node name="SubViewport2" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false

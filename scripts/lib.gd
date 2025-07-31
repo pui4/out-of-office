@@ -6,6 +6,8 @@ extends Node
 @export var time : Timer
 @export var base_time : float = 120
 
+signal task_interaction
+
 func _ready() -> void:
 	time = Timer.new()
 	add_child(time)
