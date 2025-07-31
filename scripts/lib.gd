@@ -6,6 +6,8 @@ extends Node
 @export var time : Timer
 @export var base_time : float = 120
 
+@export var room_has_real_door : bool
+
 signal task_interaction
 signal time_increased
 
