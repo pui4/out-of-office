@@ -37,7 +37,7 @@ _subresources={
 "running": {
 "save_to_file/enabled": false,
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "",
+"save_to_file/path": "res://anims/arm/running.res",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -1834,6 +1834,12 @@ _subresources={
 "slices/amount": 0
 }
 },
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://cw732xkv1nedc"
+}
+},
 "meshes": {
 "player_Icosphere_001": {
 "generate/lightmap_uv": 0,
@@ -1841,7 +1847,7 @@ _subresources={
 "generate/shadow_meshes": 2,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": false,
-"save_to_file/path": ""
+"save_to_file/path": "res://meshes/arm/player_Icosphere_001.res"
 },
 "player_Icosphere_004": {
 "generate/lightmap_uv": 0,
@@ -1849,7 +1855,7 @@ _subresources={
 "generate/shadow_meshes": 2,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": false,
-"save_to_file/path": ""
+"save_to_file/path": "res://meshes/arm/player_Icosphere_004.res"
 }
 },
 "nodes": {

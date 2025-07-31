@@ -19,12 +19,16 @@ extends CharacterBody3D
 @onready var target_head : Marker3D = $"target_head"
 @onready var target_camera : Marker3D = $"target_head/target_camera"
 
+@onready var arm_anim : AnimationPlayer = $"SubViewportContainer/SubViewport/head/Camera3D/arms/player/AnimationPlayer"
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	Lib.player = self
 	
 	max_accel *= max_speed
+	
+	arm_anim.play("running")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

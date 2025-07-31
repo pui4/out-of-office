@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://oo63yf8rs3jd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_lvjdj"]
 [ext_resource type="PackedScene" uid="uid://c6fbbsp7rem6o" path="res://assets/player.tscn" id="2_rdi1l"]
 [ext_resource type="PackedScene" uid="uid://b6cs7lhsj08hi" path="res://rooms/testing.tscn" id="3_rdi1l"]
-[ext_resource type="PackedScene" path="res://assets/post_process.tscn" id="4_txpwr"]
+[ext_resource type="PackedScene" uid="uid://0lcgia6x0vj" path="res://assets/post_process.tscn" id="4_txpwr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txpwr"]
 albedo_texture = ExtResource("1_lvjdj")
