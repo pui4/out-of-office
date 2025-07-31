@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbawdl8hy1aa8"]
+
+[ext_resource type="Script" uid="uid://ul27ls3wn27i" path="res://scripts/whiteboard_task.gd" id="1_72cf8"]
+[ext_resource type="ArrayMesh" uid="uid://q8g34sh0ivdu" path="res://meshes/assets_whiteboard.res" id="1_e645f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcarl"]
+size = Vector3(3.021, 3.11279, 0.687256)
+
+[sub_resource type="Animation" id="Animation_dcarl"]
+resource_name = "whipe_board"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.615686), Color(1, 1, 1, 0.372549), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_72cf8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bp341"]
+_data = {
+&"RESET": SubResource("Animation_72cf8"),
+&"wipe_board": SubResource("Animation_dcarl")
+}
+
+[node name="WhiteboardTask" type="StaticBody3D" groups=["task"]]
+script = ExtResource("1_72cf8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_e645f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0144043, 1.55151, -0.0133057)
+shape = SubResource("BoxShape3D_dcarl")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-8.32502, 0, -7.27797e-07, 0, 8.32502, 0, 7.27797e-07, 0, -8.32502, 0, 2.29948, -0.0262465)
+texture_filter = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bp341")
+}

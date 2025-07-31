@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://xt4p88knjhar"]
+[gd_scene load_steps=8 format=3 uid="uid://xt4p88knjhar"]
 
 [ext_resource type="Texture2D" uid="uid://oo63yf8rs3jd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_lvjdj"]
 [ext_resource type="PackedScene" uid="uid://c6fbbsp7rem6o" path="res://assets/player.tscn" id="2_rdi1l"]
 [ext_resource type="PackedScene" uid="uid://b6cs7lhsj08hi" path="res://rooms/testing.tscn" id="3_rdi1l"]
 [ext_resource type="PackedScene" uid="uid://0lcgia6x0vj" path="res://assets/post_process.tscn" id="4_txpwr"]
 [ext_resource type="PackedScene" uid="uid://jkqnjgtv2kvm" path="res://assets/printer_task.tscn" id="5_16g7q"]
+[ext_resource type="PackedScene" uid="uid://cbawdl8hy1aa8" path="res://assets/whiteboard_task.tscn" id="6_obyai"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txpwr"]
 albedo_texture = ExtResource("1_lvjdj")
@@ -32,3 +33,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0368938, 0, 13.5228)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.318082, 0.948063, 0, -0.948063, -0.318082, 0, 11.9136, 0)
+
+[node name="WhiteboardTask" parent="." instance=ExtResource("6_obyai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.62898, 0.20867, 10.7806)
