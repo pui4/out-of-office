@@ -1,52 +1,12 @@
-[gd_scene load_steps=13 format=4 uid="uid://b0k0juiybngdx"]
+[gd_scene load_steps=13 format=4 uid="uid://dyf0d38mx03j5"]
 
 [ext_resource type="ArrayMesh" uid="uid://bjfkffbddmwsu" path="res://meshes/assets_fake door.res" id="1_fntvb"]
-[ext_resource type="Script" uid="uid://cr04l3uiidach" path="res://scripts/fake_door.gd" id="1_r7c5k"]
+[ext_resource type="Script" path="res://scripts/fake_door.gd" id="1_r7c5k"]
 [ext_resource type="Shader" uid="uid://dsrhs4l4xh8at" path="res://custom_shaders/door_behind.gdshader" id="2_0g7mh"]
 [ext_resource type="Material" uid="uid://cw732xkv1nedc" path="res://pallet_mat.tres" id="4_r7c5k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fntvb"]
 size = Vector3(0.198792, 3.96729, 2.34674)
-
-[sub_resource type="Animation" id="Animation_fntvb"]
-resource_name = "kill"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.933333, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.710794, 3, 0), Vector3(2.60621, 3, 0), Vector3(2.60621, 3, 0), Vector3(0.808755, 3, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.51),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -2.35619, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("player:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 0.94, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-4.49114, 1.84497, 0), Vector3(-1.22425, 1.84497, 0), Vector3(-3.02171, 1.84497, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_0g7mh"]
 length = 0.001
@@ -85,6 +45,94 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-4.49114, 1.84497, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.56764, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fntvb"]
+resource_name = "kill"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.366667, 0.833333, 1, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.710794, 3, 0), Vector3(0.271, 3, 0), Vector3(0.243513, 3, 0), Vector3(1.186, 3.37, -0.05), Vector3(0.706, 4.095, -0.05), Vector3(1.921, 4.525, -0.05), Vector3(-0.664, 1.96, -0.05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 20036.8, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.0872665, 0), Vector3(0, -3.15032, 0), Vector3(0, -3.15032, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.333333, 0.8, 1.13333, 1.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-4.49114, 1.84497, 0), Vector3(-5.416, 1.71, 0), Vector3(-1.771, 1.75, 0), Vector3(-1.771, 2.285, 0), Vector3(-1.771, 1.57, 0), Vector3(-7.286, -0.18, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.333333, 0.8, 1.1, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 0), Vector3(0.235619, -1.5708, 0), Vector3(0.375246, -1.5708, 0), Vector3(0.375246, -1.5708, 0), Vector3(-0.174533, -1.5708, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.366667, 0.8, 1, 1.23333, 1.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.56764, 0), Vector3(-0.275762, 1.56731, 0), Vector3(0.366519, 1.56731, 0), Vector3(0, 1.56731, 0), Vector3(-0.476475, 1.56731, 0), Vector3(0.715585, 1.56731, 0), Vector3(-0.0610865, 1.56731, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o5jtm"]
