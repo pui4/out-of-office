@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0ks3niawvdty"
-path.s3tc="res://.godot/imported/assets_office pallete.png-26e3e49145ac01da7537bf6bbe446f8e.s3tc.ctex"
+path="res://.godot/imported/assets_office pallete.png-26e3e49145ac01da7537bf6bbe446f8e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "c779f4b90caa11418bf3d12c88482ca0"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://blends/assets_office pallete.png"
-dest_files=["res://.godot/imported/assets_office pallete.png-26e3e49145ac01da7537bf6bbe446f8e.s3tc.ctex"]
+dest_files=["res://.godot/imported/assets_office pallete.png-26e3e49145ac01da7537bf6bbe446f8e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

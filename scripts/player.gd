@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 	if wishdir != Vector3.ZERO and not arm_anim.is_playing():
 		arm_anim.play("running")
 	elif wishdir == Vector3.ZERO:
-		arm_anim.stop()
+		arm_anim.pause()
 	
 	# Footsteps
 	if wishdir != Vector3.ZERO and not footsteps_sfx.is_random_playing:

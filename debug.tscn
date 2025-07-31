@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://oo63yf8rs3jd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_lvjdj"]
 [ext_resource type="PackedScene" uid="uid://c6fbbsp7rem6o" path="res://assets/player.tscn" id="2_rdi1l"]
 [ext_resource type="PackedScene" uid="uid://b6cs7lhsj08hi" path="res://rooms/testing.tscn" id="3_rdi1l"]
-[ext_resource type="PackedScene" path="res://assets/post_process.tscn" id="4_txpwr"]
+[ext_resource type="PackedScene" uid="uid://0lcgia6x0vj" path="res://assets/post_process.tscn" id="4_txpwr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txpwr"]
 albedo_texture = ExtResource("1_lvjdj")
@@ -26,18 +26,6 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 size = Vector3(200, 0.5, 200)
 material = SubResource("StandardMaterial3D_txpwr")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99915, 1.79954, -2.72607)
-size = Vector3(1, 3.43738, 6.45215)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95311, 1.79954, -2.72607)
-size = Vector3(1, 3.43738, 6.45215)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.891, 1.79954, -2.72607)
-size = Vector3(1, 3.43738, 6.45215)
 
 [node name="Player" parent="." instance=ExtResource("2_rdi1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76354, 0)
