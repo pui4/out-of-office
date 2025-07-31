@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://0lcgia6x0vj"]
+[gd_scene load_steps=3 format=3 uid="uid://xvgg5wi7hg0r"]
 
 [ext_resource type="Shader" uid="uid://cqe5enbxtt3sv" path="res://custom_shaders/post_process.gdshader" id="1_vxp6f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hhvxf"]
 shader = ExtResource("1_vxp6f")
-shader_parameter/bands = 25.0
+shader_parameter/bands = 10.0
 
 [node name="PostProcessing" type="CanvasLayer"]
 

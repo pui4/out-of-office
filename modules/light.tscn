@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmhvjdj3m6bf4"]
+[gd_scene load_steps=5 format=3 uid="uid://cmhvjdj3m6bf4"]
 
 [ext_resource type="Texture2D" uid="uid://bcouyxvrinpyx" path="res://texture/office_pallete.png" id="1_uex0r"]
+[ext_resource type="Script" uid="uid://ddthq75ei40qi" path="res://scripts/light.gd" id="1_ulyft"]
 [ext_resource type="ArrayMesh" uid="uid://dr2nrl7pa0v0" path="res://meshes/assets_light.res" id="2_d3pl2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulyft"]
@@ -9,6 +10,7 @@ emission_enabled = true
 emission_texture = ExtResource("1_uex0r")
 
 [node name="Light" type="Node3D"]
+script = ExtResource("1_ulyft")
 
 [node name="AssetsLight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
