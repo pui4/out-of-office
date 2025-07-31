@@ -13,7 +13,7 @@ func _ready() -> void:
 		play_random()
 
 func play_random() -> void:
-	var target_audio : int = randi() % len(streams) - 1
+	var target_audio : int = randi_range(0, len(streams) - 1)
 	stream = streams[target_audio]
 	play()
 	is_random_playing = true

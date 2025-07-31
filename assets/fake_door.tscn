@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://dyf0d38mx03j5"]
+[gd_scene load_steps=13 format=4 uid="uid://c6kq7l8al7jik"]
 
 [ext_resource type="ArrayMesh" uid="uid://bjfkffbddmwsu" path="res://meshes/assets_fake door.res" id="1_fntvb"]
-[ext_resource type="Script" path="res://scripts/fake_door.gd" id="1_r7c5k"]
+[ext_resource type="Script" uid="uid://cr04l3uiidach" path="res://scripts/fake_door.gd" id="1_r7c5k"]
 [ext_resource type="Shader" uid="uid://dsrhs4l4xh8at" path="res://custom_shaders/door_behind.gdshader" id="2_0g7mh"]
 [ext_resource type="Material" uid="uid://cw732xkv1nedc" path="res://pallet_mat.tres" id="4_r7c5k"]
 
@@ -198,7 +198,6 @@ shape = SubResource("BoxShape3D_fntvb")
 libraries = {
 &"": SubResource("AnimationLibrary_o5jtm")
 }
-speed_scale = 1.5
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.186602, 2, 0)
@@ -206,7 +205,7 @@ visible = false
 mesh = SubResource("PlaneMesh_r7c5k")
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.13853)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.207333, 0, 1.13853)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16003)
@@ -214,7 +213,7 @@ mesh = ExtResource("1_fntvb")
 skeleton = NodePath("../..")
 
 [node name="player" type="Node3D" parent="."]
-transform = Transform3D(-1.11581e-08, 0, -0.255268, 0, 0.255268, 0, 0.255268, 0, -1.11581e-08, -4.49114, 1.84497, 0)
+transform = Transform3D(-9.24068e-07, 0, -0.255268, 0, 0.255268, 0, 0.255268, 0, -9.24068e-07, -4.49114, 1.84497, 0)
 
 [node name="Armature" type="Node3D" parent="player"]
 transform = Transform3D(5, 0, 0, 0, 0, 5, 0, -5, 0, 0, 0, -3)
@@ -257,9 +256,10 @@ metadata/extras = {
 }
 
 [node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.223516, 0, 1.10163e-07)
 
 [node name="Camera3D" type="Marker3D" parent="."]
-transform = Transform3D(0.003159, 0, 0.999995, 0, 1, 0, -0.999995, 0, 0.003159, 0.710794, 3, 0)
+transform = Transform3D(0.00315637, 0, 0.999995, 0, 1, 0, -0.999995, 0, 0.00315637, 0.710794, 3, 0)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 visible = false
