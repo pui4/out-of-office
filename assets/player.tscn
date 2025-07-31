@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6fbbsp7rem6o"]
+[gd_scene load_steps=10 format=3 uid="uid://c6fbbsp7rem6o"]
 
 [ext_resource type="Script" uid="uid://dydabaea4whwm" path="res://scripts/player.gd" id="1_674bt"]
 [ext_resource type="PackedScene" uid="uid://d2ndujmf64j53" path="res://blends/player.blend" id="2_3mip4"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dyo7m7865xefc" path="res://sfx/footsteps/step_lth2.mp3" id="5_uovkd"]
 [ext_resource type="AudioStream" uid="uid://bgvs2ymmsk6qv" path="res://sfx/footsteps/step_lth4.mp3" id="6_jeibo"]
 [ext_resource type="AudioStream" uid="uid://dwoxtarh31gfe" path="res://sfx/footsteps/step_lth33.mp3" id="7_cn88q"]
+[ext_resource type="PackedScene" uid="uid://qrvn3nh07xkv" path="res://assets/ui.tscn" id="8_uovkd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_674bt"]
 
@@ -73,3 +74,5 @@ script = ExtResource("3_insbl")
 streams = Array[AudioStream]([ExtResource("4_yceh7"), ExtResource("5_uovkd"), ExtResource("6_jeibo"), ExtResource("7_cn88q")])
 time_delay = 0.1
 metadata/_custom_type_script = "uid://saasv77rp4mn"
+
+[node name="UI" parent="." instance=ExtResource("8_uovkd")]

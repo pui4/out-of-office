@@ -35,7 +35,7 @@ operation = 2
 size = Vector3(1.11121, 1.89465, 1)
 
 [node name="Door" parent="." instance=ExtResource("1_iuwjj")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0472309, 0.901669, -5.38997)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0472309, 0.0113444, -5.38997)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.92542, -2.8345)
