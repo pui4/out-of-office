@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://e5wnlwgyx5sl" path="res://meshes/assets_cubicle.res" id="1_n4sv4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caeth"]
-size = Vector3(2.2, 2, 2.1)
+size = Vector3(2.2, 3.75635, 2.1)
 
 [node name="Desk" type="Node3D"]
 
@@ -14,5 +14,5 @@ mesh = ExtResource("1_n4sv4")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87817, 0.05)
 shape = SubResource("BoxShape3D_caeth")
