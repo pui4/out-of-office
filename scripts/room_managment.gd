@@ -20,3 +20,7 @@ func _ready() -> void:
 		var fdoor_inst : Node3D = fake_door.instantiate()
 		add_child(fdoor_inst)
 		fdoor_inst.global_transform = marker.global_transform
+		fdoor_inst.scale.x = -1 # HACK: THIS IS BAD
+	
+	for node in get_tree().get_nodes_in_group("door_marker"):
+		node.queue_free()

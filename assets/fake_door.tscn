@@ -205,7 +205,7 @@ visible = false
 mesh = SubResource("PlaneMesh_r7c5k")
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.13853)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.207333, 0, 1.13853)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16003)
@@ -256,6 +256,7 @@ metadata/extras = {
 }
 
 [node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.223516, 0, 1.10163e-07)
 
 [node name="Camera3D" type="Marker3D" parent="."]
 transform = Transform3D(0.00315637, 0, 0.999995, 0, 1, 0, -0.999995, 0, 0.00315637, 0.710794, 3, 0)
