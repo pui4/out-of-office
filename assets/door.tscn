@@ -1,11 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4pp12a0kbppq"]
 
 [ext_resource type="Script" uid="uid://djnc6xndn3srf" path="res://scripts/door.gd" id="1_7g2qk"]
+[ext_resource type="ArrayMesh" uid="uid://cvwedp0squc02" path="res://meshes/assets_door.res" id="2_vtj8s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vtj8s"]
-size = Vector3(0.1, 1.791, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_7g2qk"]
 size = Vector3(0.1, 1.791, 1)
 
 [node name="Door" type="Area3D"]
@@ -16,7 +14,7 @@ script = ExtResource("1_7g2qk")
 shape = SubResource("BoxShape3D_vtj8s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_7g2qk")
+mesh = ExtResource("2_vtj8s")
 
 [node name="Next_room" type="Marker3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.103108, -0.897437, 0)
