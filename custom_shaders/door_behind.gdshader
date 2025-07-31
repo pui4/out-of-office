@@ -13,17 +13,17 @@ float rand(vec2 co){
 void fragment() {
 	vec2 base_uv = vec2(SCREEN_UV.x - 0.5, SCREEN_UV.y - 0.5) * (1.0 / (tex_scale));
 	base_uv.x *= VIEWPORT_SIZE.x / VIEWPORT_SIZE.y;
-	
+
 	float depth = length(NODE_POSITION_WORLD - CAMERA_POSITION_WORLD) + 0.5;
-	
+
 	vec4 tex = texture(albedo_tex, base_uv * depth + (scroll_speed * vec2(-1.0, 1.0) * TIME * 0.1));
-	
+
 	tex.rgb = mix(vec3(0.0), tex.rgb, tex.a);
-	
+
 	float noise = pow(rand(UV * TIME * 0.1), 3) * static_intensity;
 	vec3 cnoise = mix(color, vec3(1.0) - color, noise);
-	
+
 	vec3 final = mix(cnoise * tex.rgb, cnoise, noise * 0.5);
-	
+
 	ALBEDO = final;
 }

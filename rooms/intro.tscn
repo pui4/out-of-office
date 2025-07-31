@@ -1,0 +1,208 @@
+[gd_scene load_steps=13 format=3 uid="uid://dsu0ao84mfswy"]
+
+[ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="1_n20gm"]
+[ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_xy2ur"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="3_c6n01"]
+[ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="4_7fbs8"]
+[ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="5_gch8k"]
+[ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_c6n01"]
+[ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_7fbs8"]
+[ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="8_gch8k"]
+[ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="9_qbala"]
+[ext_resource type="ArrayMesh" uid="uid://by4y5vyovn1ce" path="res://meshes/assets_exit sign.res" id="10_pi5aw"]
+
+[sub_resource type="Animation" id="Animation_gch8k"]
+resource_name = "cutscene"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rgan4"]
+_data = {
+&"cutscene": SubResource("Animation_gch8k")
+}
+
+[node name="Intro" type="Node3D"]
+
+[node name="staticprops" type="Node3D" parent="."]
+
+[node name="Open" parent="staticprops" instance=ExtResource("1_n20gm")]
+
+[node name="Open2" parent="staticprops" instance=ExtResource("1_n20gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Open3" parent="staticprops" instance=ExtResource("1_n20gm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, 0)
+
+[node name="Straight" parent="staticprops" instance=ExtResource("2_xy2ur")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -16)
+
+[node name="DeadEnd" parent="staticprops" instance=ExtResource("3_c6n01")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -24)
+
+[node name="TSplit" parent="staticprops" instance=ExtResource("4_7fbs8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, -8)
+
+[node name="Straight2" parent="staticprops" instance=ExtResource("2_xy2ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -8)
+
+[node name="DeadEnd2" parent="staticprops" instance=ExtResource("3_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -8)
+
+[node name="TSplit2" parent="staticprops" instance=ExtResource("4_7fbs8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Turn" parent="staticprops" instance=ExtResource("5_gch8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="TSplit3" parent="staticprops" instance=ExtResource("4_7fbs8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 8)
+
+[node name="TSplit4" parent="staticprops" instance=ExtResource("4_7fbs8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 8)
+
+[node name="Turn2" parent="staticprops" instance=ExtResource("5_gch8k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16, 0, 8)
+
+[node name="Straight3" parent="staticprops" instance=ExtResource("2_xy2ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="TSplit5" parent="staticprops" instance=ExtResource("4_7fbs8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -8)
+
+[node name="Turn3" parent="staticprops" instance=ExtResource("5_gch8k")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 16, 0, -8)
+
+[node name="Open4" parent="staticprops" instance=ExtResource("1_n20gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="DeadEnd3" parent="staticprops" instance=ExtResource("3_c6n01")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 32, 0, 0)
+
+[node name="Desk" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 0.0284729)
+
+[node name="Desk6" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 8.12847)
+
+[node name="Desk7" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 0.128473)
+
+[node name="Desk8" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 6.12847)
+
+[node name="Desk9" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 4.12847)
+
+[node name="Desk10" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 2.12847)
+
+[node name="Desk2" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 8.02847)
+
+[node name="Desk3" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 2.02847)
+
+[node name="Desk4" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 4.02847)
+
+[node name="Desk5" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 6.02847)
+
+[node name="Desk21" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Desk22" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 8.1)
+
+[node name="Desk23" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 0.0999999)
+
+[node name="Desk24" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 6.1)
+
+[node name="Desk25" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 4.1)
+
+[node name="Desk26" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 2.1)
+
+[node name="Desk27" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="Desk28" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 2)
+
+[node name="Desk29" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
+
+[node name="Desk30" parent="staticprops" instance=ExtResource("6_c6n01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 6)
+
+[node name="Pillar" parent="staticprops" instance=ExtResource("7_7fbs8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+
+[node name="Pillar2" parent="staticprops" instance=ExtResource("7_7fbs8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3)
+
+[node name="Pillar3" parent="staticprops" instance=ExtResource("7_7fbs8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -7)
+
+[node name="BigTable" parent="staticprops" instance=ExtResource("8_gch8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 6)
+
+[node name="BigTable2" parent="staticprops" instance=ExtResource("8_gch8k")]
+transform = Transform3D(0.898718, 0, -0.438528, 0, 1, 0, 0.438528, 0, 0.898718, 11, 0, 2)
+
+[node name="cutscene props" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="cutscene props"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.46443, 1.44413, 1.95552)
+fov = 82.3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene props"]
+libraries = {
+&"": SubResource("AnimationLibrary_rgan4")
+}
+
+[node name="Door" parent="cutscene props" instance=ExtResource("9_qbala")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23244, -5, -6)
+
+[node name="AssetsExitSign" type="MeshInstance3D" parent="cutscene props/Door"]
+transform = Transform3D(-3.13411e-08, 0, -0.215, 0, 0.358, 0, 0.717, 0, -9.39795e-09, 0, 4, -0.0946622)
+mesh = ExtResource("10_pi5aw")
+skeleton = NodePath("../..")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3hmt28ay5iny"]
+
+[ext_resource type="ArrayMesh" uid="uid://bakon8v1iq0rd" path="res://meshes/assets_open.res" id="1_ht5jt"]
+[ext_resource type="PackedScene" uid="uid://cmhvjdj3m6bf4" path="res://modules/light.tscn" id="2_1g3st"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_etus5"]
+data = PackedVector3Array(-4, 0, -4, 4, 0, 4, -4, 0, 4, -4, 0, -4, 4, 0, -4, 4, 0, 4, 4, 6, -4, -4, 6, 4, 4, 6, 4, 4, 6, -4, -4, 6, -4, -4, 6, 4)
+
+[node name="Open" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="AssetsOpen" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_ht5jt")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_etus5")
+
+[node name="Light" parent="StaticBody3D" instance=ExtResource("2_1g3st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
