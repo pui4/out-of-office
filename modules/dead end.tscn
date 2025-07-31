@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0pwmj4ojxd1w"]
+
+[ext_resource type="ArrayMesh" uid="uid://bafrkr1dwfj34" path="res://meshes/assets_dead end.res" id="1_dq5fi"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_40oh7"]
+data = PackedVector3Array(-4, 3.3752, 4, -4, 6, -4, -4, 3.3752, -4, -4, 3.3752, 4, -4, 6, 4, -4, 6, -4, -4, 0, -4, 4, 0, 4, -4, 0, 4, -4, 0, -4, 4, 0, -4, 4, 0, 4, 4, 6, -4, -4, 6, 4, 4, 6, 4, 4, 6, -4, -4, 6, -4, -4, 6, 4, -4, 0, 4, -4, 0.42, -4, -4, 0, -4, -4, 0, 4, -4, 0.42, 4, -4, 0.42, -4, -4, 3.0448, -4, 4, 0.42, -4, -4, 0.42, -4, -4, 3.0448, -4, 4, 3.0448, -4, 4, 0.42, -4, -4, 0, -4, 4, 0.42, -4, 4, 0, -4, -4, 0, -4, -4, 0.42, -4, 4, 0.42, -4, -4, 3.3752, 4, 4, 6, 4, -4, 6, 4, -4, 3.3752, 4, 4, 3.3752, 4, 4, 6, 4, 4, 0.42, 4, -4, 0, 4, 4, 0, 4, 4, 0.42, 4, -4, 0.42, 4, -4, 0, 4, -4, 0.42, 4, 4, 3.0448, 4, -4, 3.0448, 4, -4, 0.42, 4, 4, 0.42, 4, 4, 3.0448, 4, -4, 3.0448, 4, 4, 3.3752, 4, -4, 3.3752, 4, -4, 3.0448, 4, 4, 3.0448, 4, 4, 3.3752, 4, -4, 6, -4, 4, 3.3752, -4, -4, 3.3752, -4, -4, 6, -4, 4, 6, -4, 4, 3.3752, -4, -4, 3.3752, -4, 4, 3.0448, -4, -4, 3.0448, -4, -4, 3.3752, -4, 4, 3.3752, -4, 4, 3.0448, -4, -4, 0.42, 4, -4, 3.0448, -4, -4, 0.42, -4, -4, 0.42, 4, -4, 3.0448, 4, -4, 3.0448, -4, -4, 3.0448, 4, -4, 3.3752, -4, -4, 3.0448, -4, -4, 3.0448, 4, -4, 3.3752, 4, -4, 3.3752, -4)
+
+[node name="DeadEnd" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="AssetsDeadEnd" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_dq5fi")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_40oh7")

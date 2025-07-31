@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://32od8dyn7l8y"]
+
+[ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_hr2wi"]
+[ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_xor8k"]
+[ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="3_a8tkk"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="4_lm52d"]
+
+[node name="T-right" type="Node3D"]
+
+[node name="DoorEnd" parent="." instance=ExtResource("1_hr2wi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Straight" parent="." instance=ExtResource("2_xor8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="TSplit" parent="." instance=ExtResource("3_a8tkk")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0, 0)
+
+[node name="DeadEnd" parent="." instance=ExtResource("4_lm52d")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -8)
+
+[node name="DoorEnd2" parent="." instance=ExtResource("1_hr2wi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 8)
