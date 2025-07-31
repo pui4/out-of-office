@@ -22,6 +22,7 @@ shape = SubResource("CapsuleShape3D_674bt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.442796, 0)
 
 [node name="target_camera" type="Marker3D" parent="target_head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, -5.96046e-08, 0)
 
 [node name="AudioListener3D" type="AudioListener3D" parent="target_head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.442796, 0)

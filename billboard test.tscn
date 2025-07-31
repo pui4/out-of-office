@@ -1,6 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk3mw770lp4r2"]
+[gd_scene load_steps=9 format=3 uid="uid://bqw0knrt75wxm"]
 
 [ext_resource type="Texture2D" uid="uid://dofo20ujylnce" path="res://bodyguard sheet.png" id="1_vv4cu"]
+[ext_resource type="Script" uid="uid://vkelb6m7svl5" path="res://addons/shaker/src/Vector3/ShakerEmitter3D.gd" id="2_l5spu"]
+[ext_resource type="Script" uid="uid://bo8fx5hy7d160" path="res://addons/shaker/data/Vector3/BaseShakerType3D.gd" id="3_8sl0j"]
+[ext_resource type="Script" uid="uid://0q5tinp6l5wm" path="res://addons/shaker/data/Vector3/ShakerTypeRandom3D.gd" id="4_8sl0j"]
+[ext_resource type="Script" uid="uid://cs6xb3jrjccvv" path="res://addons/shaker/data/Vector3/ShakerPreset3D.gd" id="4_jrb4a"]
+
+[sub_resource type="Resource" id="Resource_jrb4a"]
+script = ExtResource("4_8sl0j")
+seed = 0
+amplitude = Vector3(0.5, 0.5, 0.5)
+offset = Vector3(0, 0, 0)
+BlendingMode = 0
+fade_in = 0.0
+fade_out = 0.0
+start_percent = 0.0
+end_percent = 1.0
+_temp_graph = false
+bake_internal = 64
+metadata/_custom_type_script = "uid://0q5tinp6l5wm"
+
+[sub_resource type="Resource" id="Resource_7saxj"]
+script = ExtResource("4_jrb4a")
+PositionShake = Array[ExtResource("3_8sl0j")]([SubResource("Resource_jrb4a")])
+RotationShake = Array[ExtResource("3_8sl0j")]([])
+ScaleShake = Array[ExtResource("3_8sl0j")]([])
+bake_internal = 64
+__follow_timeline = false
+metadata/_custom_type_script = "uid://cs6xb3jrjccvv"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e1pak"]
+radius = 34.5316
 
 [node name="BillboardTest" type="Node3D"]
 
@@ -22,7 +52,23 @@ region_rect = Rect2(116.674, 0, 118.326, 171)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
 light_color = Color(0.999995, 0.448832, 0.481492, 1)
 light_energy = 16.0
 shadow_enabled = true
 omni_range = 50.0
+
+[node name="ShakerEmitter3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+script = ExtResource("2_l5spu")
+emit = true
+max_distance = 0.0
+shakerPreset = SubResource("Resource_7saxj")
+metadata/_custom_type_script = "uid://vkelb6m7svl5"
+
+[node name="Area3D" type="Area3D" parent="ShakerEmitter3D"]
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShakerEmitter3D/Area3D"]
+shape = SubResource("SphereShape3D_e1pak")

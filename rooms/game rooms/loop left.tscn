@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_l6avw"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_56xc7"]
 [ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="8_s1uaf"]
-[ext_resource type="PackedScene" uid="uid://bk3mw770lp4r2" path="res://billboard test.tscn" id="9_72xlt"]
+[ext_resource type="PackedScene" uid="uid://bqw0knrt75wxm" path="res://billboard test.tscn" id="9_72xlt"]
 
 [node name="LoopLeft" type="Node3D"]
 

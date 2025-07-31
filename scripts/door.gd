@@ -15,6 +15,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		var target_room : int = randi_range(0, len(rooms) - 1)
 		var room : PackedScene = load("res://rooms/game rooms/%s.tscn" % rooms[target_room])
+		#var room : PackedScene = load("res://rooms/intro.tscn")
 		var room_inst : Node3D = room.instantiate()
 		get_tree().current_scene.add_child(room_inst)
 		
