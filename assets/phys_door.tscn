@@ -1,6 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://ca6fb11dwsv8k"]
 
 [ext_resource type="Script" uid="uid://cii7m53jeppvk" path="res://scripts/random_sound3d.gd" id="1_cxb4q"]
+[ext_resource type="ArrayMesh" uid="uid://cvwedp0squc02" path="res://meshes/assets_door.res" id="1_enyjq"]
 [ext_resource type="Script" uid="uid://saasv77rp4mn" path="res://scripts/random_sound.gd" id="1_v2gqq"]
 [ext_resource type="AudioStream" uid="uid://c1xklmkopxu71" path="res://sfx/door_punch/Wall Break Wood A.mp3" id="2_cxb4q"]
 [ext_resource type="AudioStream" uid="uid://uk745lh2uv6d" path="res://sfx/door_punch/Wall Break Wood B.mp3" id="3_5ouhd"]
@@ -15,10 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dgguyvkgic57j" path="res://sfx/guy_punch/YES - Callout.mp3" id="13_oadpi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dke3y"]
-size = Vector3(0.1, 1.791, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_v2gqq"]
-size = Vector3(0.1, 1.791, 1)
+size = Vector3(0.291211, 3.71814, 2.0351)
 
 [node name="PhysDoor" type="RigidBody3D"]
 collision_layer = 0
@@ -26,12 +24,14 @@ mass = 10.0
 gravity_scale = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0956055, 2.01129, 0.0188904)
 shape = SubResource("BoxShape3D_dke3y")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_v2gqq")
+mesh = ExtResource("1_enyjq")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.110367, 2.09697, 0)
 autoplay = true
 script = ExtResource("1_cxb4q")
 streams = Array[AudioStream]([ExtResource("2_cxb4q"), ExtResource("3_5ouhd"), ExtResource("4_wufs5"), ExtResource("5_rqc6p"), ExtResource("6_p61j1")])

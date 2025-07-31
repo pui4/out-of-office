@@ -1,6 +1,6 @@
 extends Area3D
 
-var rooms : Array[String] = ["forwards", "left"]
+var rooms : Array[String] = ["forwards", "left", "loop left", "loop right", "right", "T-left", "t-right"]
 
 var phys_door : PackedScene = preload("res://assets/phys_door.tscn")
 @onready var next_room_point : Marker3D = $"Next_room"
@@ -23,6 +23,6 @@ func _on_body_entered(body: Node3D) -> void:
 		var door_inst : RigidBody3D = phys_door.instantiate()
 		Lib.current_room.add_child(door_inst)
 		door_inst.scale = Vector3.ONE * 2.324 # TODO: change this shit
-		door_inst.global_transform = global_transform
+		door_inst.global_transform = next_room_point.global_transform
 		door_inst.apply_impulse(-Lib.player.transform.basis.z * 250 + (Vector3.UP * 30))
 		door_inst.apply_torque_impulse(Vector3(randf_range(0, 50), randf_range(-10, 10), randf_range(-50, 50)))
