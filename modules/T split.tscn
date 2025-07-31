@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdf3315bjmc3f"]
 
-[ext_resource type="ArrayMesh" uid="uid://5ek5yvief4kl" path="res://meshes/assets_split.res" id="1_w7udd"]
-[ext_resource type="PackedScene" uid="uid://cvs1yun0bmpjl" path="res://modules/light.tscn" id="2_ax0aw"]
+[ext_resource type="ArrayMesh" uid="uid://bgq3nla25knov" path="res://meshes/assets_split.res" id="1_w7udd"]
+[ext_resource type="PackedScene" uid="uid://cmhvjdj3m6bf4" path="res://modules/light.tscn" id="2_ax0aw"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w7udd"]
 data = PackedVector3Array(-4, 3.3752, 4, -4, 6, -4, -4, 3.3752, -4, -4, 3.3752, 4, -4, 6, 4, -4, 6, -4, -4, 0, -4, 4, 0, 4, -4, 0, 4, -4, 0, -4, 4, 0, -4, 4, 0, 4, 4, 6, -4, -4, 6, 4, 4, 6, 4, 4, 6, -4, -4, 6, -4, -4, 6, 4, -4, 0, 4, -4, 0.42, -4, -4, 0, -4, -4, 0, 4, -4, 0.42, 4, -4, 0.42, -4, -4, 0.42, 4, -4, 3.0448, -4, -4, 0.42, -4, -4, 0.42, 4, -4, 3.0448, 4, -4, 3.0448, -4, -4, 3.0448, 4, -4, 3.3752, -4, -4, 3.0448, -4, -4, 3.0448, 4, -4, 3.3752, 4, -4, 3.3752, -4)

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_y61b1"]
 [ext_resource type="PackedScene" uid="uid://c6fbbsp7rem6o" path="res://assets/player.tscn" id="2_x135f"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_rkvpa"]
-[ext_resource type="PackedScene" uid="uid://0lcgia6x0vj" path="res://assets/post_process.tscn" id="5_eqsgk"]
+[ext_resource type="PackedScene" uid="uid://xvgg5wi7hg0r" path="res://assets/post_process.tscn" id="5_eqsgk"]
 
 [node name="StartRoom" type="Node3D"]
 
