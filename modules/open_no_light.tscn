@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxqr11sr840th"]
+
+[ext_resource type="ArrayMesh" uid="uid://cx2m010ipcumg" path="res://meshes/assets_open.res" id="1_o60kl"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_etus5"]
+data = PackedVector3Array(-4, 0, -4, 4, 0, 4, -4, 0, 4, -4, 0, -4, 4, 0, -4, 4, 0, 4, 4, 6, -4, -4, 6, 4, 4, 6, 4, 4, 6, -4, -4, 6, -4, -4, 6, 4)
+
+[node name="Open" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="AssetsOpen" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_o60kl")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_etus5")
