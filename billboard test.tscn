@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk3mw770lp4r2"]
+
+[ext_resource type="Texture2D" uid="uid://dofo20ujylnce" path="res://bodyguard sheet.png" id="1_vv4cu"]
+
+[node name="BillboardTest" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-4, 0, 6.03983e-07, 0, 4, 0, -6.03983e-07, 0, -4, 0, 3.2, 0)
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_vv4cu")
+region_enabled = true
+region_rect = Rect2(0, 0, 126.959, 171)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 3.2, 0)
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_vv4cu")
+region_enabled = true
+region_rect = Rect2(116.674, 0, 118.326, 171)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+light_color = Color(0.999995, 0.448832, 0.481492, 1)
+light_energy = 16.0
+shadow_enabled = true
+omni_range = 50.0
