@@ -1,22 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://xt4p88knjhar"]
+[gd_scene load_steps=6 format=3 uid="uid://xt4p88knjhar"]
 
 [ext_resource type="Texture2D" uid="uid://oo63yf8rs3jd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_lvjdj"]
 [ext_resource type="PackedScene" uid="uid://c6fbbsp7rem6o" path="res://assets/player.tscn" id="2_rdi1l"]
 [ext_resource type="PackedScene" uid="uid://b6cs7lhsj08hi" path="res://rooms/testing.tscn" id="3_rdi1l"]
-[ext_resource type="PackedScene" path="res://assets/post_process.tscn" id="4_txpwr"]
+[ext_resource type="PackedScene" uid="uid://0lcgia6x0vj" path="res://assets/post_process.tscn" id="4_txpwr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txpwr"]
 albedo_texture = ExtResource("1_lvjdj")
 uv1_triplanar = true
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lvjdj"]
-
-[sub_resource type="Sky" id="Sky_rdi1l"]
-sky_material = SubResource("ProceduralSkyMaterial_lvjdj")
-
-[sub_resource type="Environment" id="Environment_txpwr"]
-background_mode = 2
-sky = SubResource("Sky_rdi1l")
 
 [node name="debug" type="Node3D"]
 
@@ -29,13 +20,6 @@ material = SubResource("StandardMaterial3D_txpwr")
 
 [node name="Player" parent="." instance=ExtResource("2_rdi1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76354, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.581569, 0.474709, -0.660628, 0, 0.812084, 0.583541, 0.813497, -0.33937, 0.472283, 0, 5.63448, 3.83374)
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_txpwr")
 
 [node name="Testing" parent="." instance=ExtResource("3_rdi1l")]
 transform = Transform3D(2.32422, 0, 0, 0, 2.32422, 0, 0, 0, 2.32422, 12.377, 1.16391, 27.9262)

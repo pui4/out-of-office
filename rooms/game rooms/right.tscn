@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbixjkn55yp5e"]
+
+[ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_lfye1"]
+[ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_ptmag"]
+[ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="3_p1stj"]
+
+[node name="ToTheRight" type="Node3D"]
+
+[node name="Turn" parent="." instance=ExtResource("3_p1stj")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0, 0)
+
+[node name="DoorEnd2" parent="." instance=ExtResource("1_lfye1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 8)
+
+[node name="Straight" parent="." instance=ExtResource("2_ptmag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="DoorEnd" parent="." instance=ExtResource("1_lfye1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)

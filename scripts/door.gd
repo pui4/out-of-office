@@ -1,6 +1,6 @@
 extends Area3D
 
-var rooms : Array[String] = ["testing", "testing2"]
+var rooms : Array[String] = ["forwards", "left"]
 
 var phys_door : PackedScene = preload("res://assets/phys_door.tscn")
 @onready var next_room_point : Marker3D = $"Next_room"
@@ -8,7 +8,7 @@ var phys_door : PackedScene = preload("res://assets/phys_door.tscn")
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		var target_room : int = randi() % len(rooms) - 1
-		var room : PackedScene = load("res://rooms/%s.tscn" % rooms[target_room])
+		var room : PackedScene = load("res://rooms/game rooms/%s.tscn" % rooms[target_room])
 		var room_inst : Node3D = room.instantiate()
 		get_tree().current_scene.add_child(room_inst)
 		room_inst.global_position = next_room_point.global_position
