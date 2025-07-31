@@ -44,8 +44,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
 [node name="Pillar" parent="." instance=ExtResource("8_g5tvb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -2)
 
-[node name="Desk3" parent="." instance=ExtResource("7_8g6ng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
-
 [node name="Desk4" parent="." instance=ExtResource("7_8g6ng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2)
