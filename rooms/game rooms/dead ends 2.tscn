@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvbqgmcamaqj"]
+[gd_scene load_steps=9 format=3 uid="uid://bvbqgmcamaqj"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_o2k5g"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="2_pxf1c"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="5_ldh31"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="6_8r5wp"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="7_nrh2r"]
+
+[sub_resource type="Curve3D" id="Curve3D_8r5wp"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 0, 0, 0, 0, 0, 0, 0, 0, 36, 0, 20),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [node name="DeadEnds" type="Node3D"]
 
@@ -59,3 +66,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -1)
 
 [node name="Desk2" parent="." instance=ExtResource("7_nrh2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 12)
+
+[node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
+curve = SubResource("Curve3D_8r5wp")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://32od8dyn7l8y"]
+[gd_scene load_steps=10 format=3 uid="uid://32od8dyn7l8y"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_hr2wi"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_xor8k"]
@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="6_a8tkk"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="7_df1dh"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="8_tn6ut"]
+
+[sub_resource type="Curve3D" id="Curve3D_df1dh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 12),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [node name="T-right" type="Node3D"]
 
@@ -46,3 +53,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2)
 
 [node name="Pillar" parent="." instance=ExtResource("8_tn6ut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 3)
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_df1dh")

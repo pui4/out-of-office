@@ -1,12 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbixjkn55yp5e"]
+[gd_scene load_steps=10 format=3 uid="uid://cbixjkn55yp5e"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_lfye1"]
-[ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_ptmag"]
 [ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="3_p1stj"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="4_hb5aw"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="5_0p6jl"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_mq6he"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_a1dvc"]
+[ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="7_vu5ey"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="8_3t866"]
+
+[sub_resource type="Curve3D" id="Curve3D_mq6he"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 12),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [node name="ToTheRight" type="Node3D"]
 
@@ -15,9 +23,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0,
 
 [node name="DoorEnd2" parent="." instance=ExtResource("1_lfye1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 8)
-
-[node name="Straight" parent="." instance=ExtResource("2_ptmag")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
 [node name="DoorEnd" parent="." instance=ExtResource("1_lfye1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
@@ -33,3 +38,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2)
 
 [node name="Pillar" parent="." instance=ExtResource("7_a1dvc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 5)
+
+[node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
+curve = SubResource("Curve3D_mq6he")
+
+[node name="TSplit" parent="." instance=ExtResource("7_vu5ey")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 0)
+
+[node name="DeadEnd" parent="." instance=ExtResource("8_3t866")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, -8)

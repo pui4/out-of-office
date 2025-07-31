@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c57xybd2uvbji"]
+[gd_scene load_steps=13 format=3 uid="uid://c57xybd2uvbji"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_begwe"]
 [ext_resource type="Script" path="res://scripts/room_managment.gd" id="1_yktvk"]
@@ -10,6 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="8_bvlw7"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="9_p6grn"]
 [ext_resource type="PackedScene" path="res://modules/open_no_light.tscn" id="9_ur8dd"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="11_42g3q"]
+
+[sub_resource type="Curve3D" id="Curve3D_ur8dd"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 44, 0, -8, 0, 0, 0, 0, 0, 0, 12, 0, -8, 0, 0, 0, 0, 0, 0, 12, 0, -16, 0, 0, 0, 0, 0, 0, 4, 0, -16, 0, 0, 0, 0, 0, 0, 56, 0, -16),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
 
 [node name="FakeRoom2" type="Node3D"]
 script = ExtResource("1_yktvk")
@@ -43,9 +51,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0,
 
 [node name="TSplit6" parent="." instance=ExtResource("2_61gb3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -16)
-
-[node name="TSplit7" parent="." instance=ExtResource("2_61gb3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0, -16)
 
 [node name="TSplit8" parent="." instance=ExtResource("2_61gb3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36, 0, -16)
@@ -166,3 +171,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -8)
 
 [node name="Open2" parent="." instance=ExtResource("9_ur8dd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -8)
+
+[node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
+curve = SubResource("Curve3D_ur8dd")
+
+[node name="Open4" parent="." instance=ExtResource("4_u2swg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -16)
+
+[node name="DeadEnd" parent="." instance=ExtResource("11_42g3q")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0, -24)

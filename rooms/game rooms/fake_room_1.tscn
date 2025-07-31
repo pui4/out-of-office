@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq62bmhqn2nx3"]
+[gd_scene load_steps=9 format=3 uid="uid://0qawk1pa32wv"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_53m8f"]
-[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_uq0rc"]
-[ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="2_uq0rc"]
+[ext_resource type="Script" path="res://scripts/room_managment.gd" id="1_uq0rc"]
+[ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="4_ip876"]
+[ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="5_iegfs"]
+[ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="6_4uhlu"]
+[ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_m2pks"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="7_ds4yr"]
+
+[sub_resource type="Curve3D" id="Curve3D_iegfs"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, -12),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="FakeRoom1" type="Node3D"]
 script = ExtResource("1_uq0rc")
@@ -11,19 +22,34 @@ script = ExtResource("1_uq0rc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
 [node name="DoorEnd2" parent="." instance=ExtResource("1_53m8f")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 28, 0, 0)
 
 [node name="DoorEnd3" parent="." instance=ExtResource("1_53m8f")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, -8)
-
-[node name="TSplit" parent="." instance=ExtResource("2_uq0rc")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -8)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.484153, 0, -0.874983, 0, 1, 0, 0.874983, 0, 0.484153, 6.69555, 4.02687, 3.10798)
+transform = Transform3D(0.484153, 0, -0.874983, 0, 1, 0, 0.874983, 0, 0.484153, 14.6955, 4.02687, 3.10798)
 
 [node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
 
 [node name="Marker3D2" type="Marker3D" parent="." groups=["door_marker"]]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, -12)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, -12)
+
+[node name="Straight" parent="." instance=ExtResource("4_ip876")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="Pillar" parent="." instance=ExtResource("5_iegfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -2)
+
+[node name="Desk" parent="." instance=ExtResource("6_m2pks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -2)
+
+[node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
+curve = SubResource("Curve3D_iegfs")
+
+[node name="Open" parent="." instance=ExtResource("6_4uhlu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="DeadEnd" parent="." instance=ExtResource("7_ds4yr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 8)

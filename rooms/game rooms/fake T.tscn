@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3tf5ap4aibrw"]
+[gd_scene load_steps=10 format=3 uid="uid://b3tf5ap4aibrw"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_au0t2"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_c008y"]
@@ -7,6 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="5_c008y"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="5_wdeuv"]
 [ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="7_03fr5"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="8_03fr5"]
+
+[sub_resource type="Curve3D" id="Curve3D_wdeuv"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 16, 0, 0, 0, 0, 0, 0, 20, 0, -12),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="FakeT" type="Node3D"]
 
@@ -18,9 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
 [node name="TSplit" parent="." instance=ExtResource("3_urypx")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 0)
-
-[node name="Straight2" parent="." instance=ExtResource("2_c008y")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, 8)
 
 [node name="DoorEnd2" parent="." instance=ExtResource("1_au0t2")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 15)
@@ -48,3 +53,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0,
 
 [node name="BigTable" parent="." instance=ExtResource("7_03fr5")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 21, 0, 11)
+
+[node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
+curve = SubResource("Curve3D_wdeuv")
+
+[node name="TSplit2" parent="." instance=ExtResource("3_urypx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 7)
+
+[node name="DeadEnd" parent="." instance=ExtResource("8_03fr5")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 28, 0, 8)
