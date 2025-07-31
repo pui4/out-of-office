@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgomtdhemcpwo"]
+[gd_scene load_steps=9 format=3 uid="uid://dgomtdhemcpwo"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_o0ek7"]
 [ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="2_18b2o"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_18b2o"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="4_14hij"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="5_td346"]
+[ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="6_4d51b"]
+[ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_uu3fg"]
+[ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="8_81386"]
 
 [node name="TakeItBack" type="Node3D"]
 
@@ -31,3 +34,15 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="RandomTaskSpawner2" parent="." instance=ExtResource("5_td346")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 14, 0, -2)
+
+[node name="BigTable" parent="." instance=ExtResource("6_4d51b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 8)
+
+[node name="Pillar" parent="." instance=ExtResource("7_uu3fg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -2)
+
+[node name="Desk" parent="." instance=ExtResource("8_81386")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 16)
+
+[node name="Desk2" parent="." instance=ExtResource("8_81386")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 14)

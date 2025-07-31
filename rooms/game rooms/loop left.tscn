@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctshvcnrstxi7"]
+[gd_scene load_steps=9 format=3 uid="uid://ctshvcnrstxi7"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_ijqcc"]
 [ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="2_10hju"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_b0bht"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="4_i252t"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="5_14gtu"]
+[ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_l6avw"]
+[ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_56xc7"]
+[ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="8_s1uaf"]
 
 [node name="LoopLeft" type="Node3D"]
 
@@ -31,3 +34,15 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="RandomTaskSpawner2" parent="." instance=ExtResource("5_14gtu")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 14, 0, -18)
+
+[node name="Desk" parent="." instance=ExtResource("6_l6avw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -14)
+
+[node name="Desk2" parent="." instance=ExtResource("6_l6avw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -16)
+
+[node name="Pillar" parent="." instance=ExtResource("7_56xc7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -8)
+
+[node name="BigTable" parent="." instance=ExtResource("8_s1uaf")]
+transform = Transform3D(0.330267, 0, -0.943887, 0, 1, 0, 0.943887, 0, 0.330267, 7, 0, 1.3)
