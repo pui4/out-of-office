@@ -24,5 +24,5 @@ func _on_body_entered(body: Node3D) -> void:
 		Lib.current_room.add_child(door_inst)
 		door_inst.scale = Vector3.ONE * 2.324 # TODO: change this shit
 		door_inst.global_transform = global_transform
-		door_inst.apply_impulse(-Lib.player.transform.basis.z * 150 + (Vector3.UP * 30))
-		door_inst.apply_torque_impulse(Vector3(randf_range(-100, 100), randf_range(-100, 100), randf_range(-100, 100)))
+		door_inst.apply_impulse(-Lib.player.transform.basis.z * 250 + (Vector3.UP * 30))
+		door_inst.apply_torque_impulse(Vector3(randf_range(0, 50), randf_range(-10, 10), randf_range(-50, 50)))

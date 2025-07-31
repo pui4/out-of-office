@@ -1,4 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca6fb11dwsv8k"]
+[gd_scene load_steps=16 format=3 uid="uid://ca6fb11dwsv8k"]
+
+[ext_resource type="Script" uid="uid://cii7m53jeppvk" path="res://scripts/random_sound3d.gd" id="1_cxb4q"]
+[ext_resource type="Script" uid="uid://saasv77rp4mn" path="res://scripts/random_sound.gd" id="1_v2gqq"]
+[ext_resource type="AudioStream" uid="uid://c1xklmkopxu71" path="res://sfx/door_punch/Wall Break Wood A.mp3" id="2_cxb4q"]
+[ext_resource type="AudioStream" uid="uid://uk745lh2uv6d" path="res://sfx/door_punch/Wall Break Wood B.mp3" id="3_5ouhd"]
+[ext_resource type="AudioStream" uid="uid://f3ywsgrwuu8k" path="res://sfx/door_punch/Wall Break Wood C.mp3" id="4_wufs5"]
+[ext_resource type="AudioStream" uid="uid://cwswrurm7t3kf" path="res://sfx/door_punch/Wall Break Wood D.mp3" id="5_rqc6p"]
+[ext_resource type="AudioStream" uid="uid://ca6d06yvsa2wo" path="res://sfx/door_punch/Wall Break Wood E.mp3" id="6_p61j1"]
+[ext_resource type="AudioStream" uid="uid://hiawdfum23lu" path="res://sfx/guy_punch/Attacking Large 003.mp3" id="8_mlj5k"]
+[ext_resource type="AudioStream" uid="uid://dwyxff14in505" path="res://sfx/guy_punch/Attacking Medium 002.mp3" id="9_enyjq"]
+[ext_resource type="AudioStream" uid="uid://dp5piltu1uonr" path="res://sfx/guy_punch/Attacking Small 003.mp3" id="10_ov564"]
+[ext_resource type="AudioStream" uid="uid://bkuq8u3vk4cws" path="res://sfx/guy_punch/Attacking Ultimate 001.mp3" id="11_xtrfi"]
+[ext_resource type="AudioStream" uid="uid://deau5isp17f4r" path="res://sfx/guy_punch/Too easy - Callout.mp3" id="12_t54qp"]
+[ext_resource type="AudioStream" uid="uid://dgguyvkgic57j" path="res://sfx/guy_punch/YES - Callout.mp3" id="13_oadpi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dke3y"]
 size = Vector3(0.1, 1.791, 1)
@@ -16,3 +30,16 @@ shape = SubResource("BoxShape3D_dke3y")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_v2gqq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+autoplay = true
+script = ExtResource("1_cxb4q")
+streams = Array[AudioStream]([ExtResource("2_cxb4q"), ExtResource("3_5ouhd"), ExtResource("4_wufs5"), ExtResource("5_rqc6p"), ExtResource("6_p61j1")])
+play_on_load = true
+metadata/_custom_type_script = "uid://cii7m53jeppvk"
+
+[node name="RandomSound" type="AudioStreamPlayer" parent="."]
+script = ExtResource("1_v2gqq")
+streams = Array[AudioStream]([ExtResource("8_mlj5k"), ExtResource("9_enyjq"), ExtResource("10_ov564"), ExtResource("11_xtrfi"), ExtResource("12_t54qp"), ExtResource("13_oadpi")])
+play_on_load = true
+metadata/_custom_type_script = "uid://saasv77rp4mn"

@@ -1859,6 +1859,12 @@ _subresources={
 }
 },
 "nodes": {
+"PATH:Armature/Skeleton3D/Icosphere_002": {
+"mesh_instance/layers": 2
+},
+"PATH:Armature_001/Skeleton3D/Icosphere_001": {
+"mesh_instance/layers": 2
+},
 "PATH:Camera": {
 "import/skip_import": true
 }

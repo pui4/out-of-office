@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1xklmkopxu71"
+path="res://.godot/imported/Wall Break Wood A.mp3-40ea7015bdef62ff210317ede65fa00b.mp3str"
+
+[deps]
+
+source_file="res://sfx/door_punch/Wall Break Wood A.mp3"
+dest_files=["res://.godot/imported/Wall Break Wood A.mp3-40ea7015bdef62ff210317ede65fa00b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

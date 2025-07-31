@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hiawdfum23lu"
+path="res://.godot/imported/Attacking Large 003.mp3-85c902d20aeb94eb621b05a76ebe2217.mp3str"
+
+[deps]
+
+source_file="res://sfx/guy_punch/Attacking Large 003.mp3"
+dest_files=["res://.godot/imported/Attacking Large 003.mp3-85c902d20aeb94eb621b05a76ebe2217.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

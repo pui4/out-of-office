@@ -21,14 +21,14 @@ extends CharacterBody3D
 
 @onready var arm_anim : AnimationPlayer = $"SubViewportContainer/SubViewport/head/Camera3D/arms/player/AnimationPlayer"
 
+@onready var footsteps_sfx : RandomSound = $"FootstepSFX"
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
 	Lib.player = self
-	
 	max_accel *= max_speed
 	
-	arm_anim.play("running")
+	arm_anim.speed_scale = 1.5
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -65,3 +65,17 @@ func _physics_process(delta: float) -> void:
 	velocity /= friction
 	
 	move_and_slide()
+	
+	# Arm animation
+	if wishdir != Vector3.ZERO and not arm_anim.is_playing():
+		arm_anim.play("running")
+	elif wishdir == Vector3.ZERO:
+		arm_anim.stop()
+	
+	# Footsteps
+	if wishdir != Vector3.ZERO and not footsteps_sfx.is_random_playing:
+		footsteps_sfx.loop = true
+		footsteps_sfx.play_random()
+	elif wishdir == Vector3.ZERO:
+		footsteps_sfx.loop = false
+		footsteps_sfx.stop_random()

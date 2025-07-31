@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6fbbsp7rem6o"]
+[gd_scene load_steps=9 format=3 uid="uid://c6fbbsp7rem6o"]
 
 [ext_resource type="Script" uid="uid://dydabaea4whwm" path="res://scripts/player.gd" id="1_674bt"]
 [ext_resource type="PackedScene" uid="uid://d2ndujmf64j53" path="res://blends/player.blend" id="2_3mip4"]
+[ext_resource type="Script" uid="uid://saasv77rp4mn" path="res://scripts/random_sound.gd" id="3_insbl"]
+[ext_resource type="AudioStream" uid="uid://sgdj3hatsccf" path="res://sfx/footsteps/step_lth1.mp3" id="4_yceh7"]
+[ext_resource type="AudioStream" uid="uid://dyo7m7865xefc" path="res://sfx/footsteps/step_lth2.mp3" id="5_uovkd"]
+[ext_resource type="AudioStream" uid="uid://bgvs2ymmsk6qv" path="res://sfx/footsteps/step_lth4.mp3" id="6_jeibo"]
+[ext_resource type="AudioStream" uid="uid://dwoxtarh31gfe" path="res://sfx/footsteps/step_lth33.mp3" id="7_cn88q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_674bt"]
 
@@ -17,6 +22,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.442796, 0)
 
 [node name="target_camera" type="Marker3D" parent="target_head"]
 
+[node name="AudioListener3D" type="AudioListener3D" parent="target_head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.442796, 0)
+current = true
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
 anchors_preset = 15
@@ -29,6 +38,8 @@ stretch_shrink = 4
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
 size = Vector2i(288, 162)
 render_target_update_mode = 4
 
@@ -48,9 +59,17 @@ transform = Transform3D(-3.32145e-09, 0, -0.075986, 0, 0.075986, 0, 0.075986, 0,
 transparent_bg = true
 handle_input_locally = false
 fsr_sharpness = 0.0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
 size = Vector2i(288, 162)
 render_target_update_mode = 4
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.445873, 0)
 cull_mask = 1048574
+
+[node name="FootstepSFX" type="AudioStreamPlayer" parent="."]
+script = ExtResource("3_insbl")
+streams = Array[AudioStream]([ExtResource("4_yceh7"), ExtResource("5_uovkd"), ExtResource("6_jeibo"), ExtResource("7_cn88q")])
+time_delay = 0.1
+metadata/_custom_type_script = "uid://saasv77rp4mn"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp5piltu1uonr"
+path="res://.godot/imported/Attacking Small 003.mp3-5827f52683865ab315005092b962c059.mp3str"
+
+[deps]
+
+source_file="res://sfx/guy_punch/Attacking Small 003.mp3"
+dest_files=["res://.godot/imported/Attacking Small 003.mp3-5827f52683865ab315005092b962c059.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

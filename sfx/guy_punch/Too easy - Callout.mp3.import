@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://deau5isp17f4r"
+path="res://.godot/imported/Too easy - Callout.mp3-08b19b1a5f9ea175c4eb76cd9c72625c.mp3str"
+
+[deps]
+
+source_file="res://sfx/guy_punch/Too easy - Callout.mp3"
+dest_files=["res://.godot/imported/Too easy - Callout.mp3-08b19b1a5f9ea175c4eb76cd9c72625c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
