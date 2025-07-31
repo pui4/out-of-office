@@ -10,7 +10,7 @@ extends CharacterBody3D
 @export var max_lean_deg : float = 7
 @export var lean_div : float = -4
 
-@export var lookspeed : float = 0.1
+@export var lookspeed : float = 0.5
 
 @onready var head : Node3D = $"SubViewportContainer/SubViewport/head"
 @onready var camera : Camera3D = $"SubViewportContainer/SubViewport/head/Camera3D"
@@ -87,3 +87,6 @@ func _physics_process(delta: float) -> void:
 		var hit : Node3D = raycast.get_collider()
 		if hit.is_in_group("task"):
 			Lib.task_interaction.emit(hit)
+			
+	if Input.is_action_just_pressed("testing"):
+		get_tree().call_group("light", "flicker")

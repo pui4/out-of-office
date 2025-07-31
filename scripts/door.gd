@@ -1,7 +1,7 @@
 extends Area3D
 
-#var rooms : Array[String] = ["forwards", "left", "loop left", "loop right", "right", "T-left", "t-right", "fake_room_1"]
-var rooms : Array[String] = ["fake_room_1"]
+var rooms : Array[String] = ["forwards", "left", "loop left", "loop right", "right", "T-left", "t-right", "fake_room_1", "fake_room_2"]
+#var rooms : Array[String] = ["fake_room_2"]
 
 var phys_door : PackedScene = preload("res://assets/phys_door.tscn")
 @onready var next_room_point : Marker3D = $"Next_room"

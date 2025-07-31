@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://ednld66pu16l" path="res://meshes/assets_large table.res" id="1_df1qm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1nki6"]
-size = Vector3(2.9, 1.5, 5.3)
+size = Vector3(2.9, 3.35144, 5.3)
 
 [node name="BigTable" type="Node3D"]
 
@@ -14,5 +14,5 @@ mesh = ExtResource("1_df1qm")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.75, -0.0499998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 1.67572, -0.0499998)
 shape = SubResource("BoxShape3D_1nki6")

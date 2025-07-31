@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq62bmhqn2nx3"]
+[gd_scene load_steps=5 format=3 uid="uid://dq62bmhqn2nx3"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_53m8f"]
 [ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_uq0rc"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="2_uq0rc"]
+[ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="4_ip876"]
 
 [node name="FakeRoom1" type="Node3D"]
 script = ExtResource("1_uq0rc")
@@ -27,3 +28,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
 
 [node name="Marker3D2" type="Marker3D" parent="." groups=["door_marker"]]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, -12)
+
+[node name="RandomTaskSpawner" parent="." instance=ExtResource("4_ip876")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2)

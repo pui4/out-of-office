@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmhvjdj3m6bf4"]
+[gd_scene load_steps=8 format=3 uid="uid://cmhvjdj3m6bf4"]
 
 [ext_resource type="Texture2D" uid="uid://bcouyxvrinpyx" path="res://texture/office_pallete.png" id="1_uex0r"]
 [ext_resource type="Script" uid="uid://ddthq75ei40qi" path="res://scripts/light.gd" id="1_ulyft"]
@@ -9,7 +9,43 @@ albedo_texture = ExtResource("1_uex0r")
 emission_enabled = true
 emission_texture = ExtResource("1_uex0r")
 
-[node name="Light" type="Node3D"]
+[sub_resource type="Animation" id="Animation_ulyft"]
+resource_name = "flicker"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpotLight3D:light_energy")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.335528, 0.402194, 0.468861, 0.535528, 0.602194, 0.666667, 0.668861, 0.733333, 0.8, 0.866667, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 1.091, 0.727, 0.182, 1.273, 2.0, 2.0, 1.091, 0.727, 0.182, 1.273, 2.0, 2.0, 1.091, 0.727, 0.182, 1.273, 2.0]
+}
+
+[sub_resource type="Animation" id="Animation_x4am6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpotLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kr3yh"]
+_data = {
+&"RESET": SubResource("Animation_x4am6"),
+&"flicker": SubResource("Animation_ulyft")
+}
+
+[node name="Light" type="Node3D" groups=["light"]]
 script = ExtResource("1_ulyft")
 
 [node name="AssetsLight" type="MeshInstance3D" parent="."]
@@ -37,3 +73,8 @@ shadow_bias = 6.581
 shadow_normal_bias = 5.19
 spot_range = 8.0
 spot_angle = 89.9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kr3yh")
+}
