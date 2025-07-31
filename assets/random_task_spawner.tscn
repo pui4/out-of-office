@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://m41xpalsgbit"]
+
+[ext_resource type="Script" uid="uid://nyldw7hnpesx" path="res://scripts/random_task_spawner.gd" id="1_qc8hp"]
+
+[node name="RandomTaskSpawner" type="Marker3D"]
+script = ExtResource("1_qc8hp")
