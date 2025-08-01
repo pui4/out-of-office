@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsu0ao84mfswy"]
+[gd_scene load_steps=16 format=3 uid="uid://dsu0ao84mfswy"]
 
 [ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="1_n20gm"]
 [ext_resource type="Script" uid="uid://c8lcclhdhicva" path="res://scripts/intro.gd" id="1_pi5aw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_c6n01"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_7fbs8"]
 [ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="8_gch8k"]
+[ext_resource type="Texture2D" uid="uid://cw73a3kfxhe83" path="res://texture/tut.png" id="8_t4xlh"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="9_qbala"]
 [ext_resource type="ArrayMesh" uid="uid://by4y5vyovn1ce" path="res://meshes/assets_exit sign.res" id="10_pi5aw"]
 
@@ -178,6 +179,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 8.0284
 
 [node name="Desk3" parent="staticprops" instance=ExtResource("6_c6n01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 2.02847)
+
+[node name="Sprite3D" type="Sprite3D" parent="staticprops/Desk3"]
+transform = Transform3D(-1.22376e-08, 0, -0.279963, 0, 0.279963, 0, 0.279963, 0, -1.22376e-08, 0.27678, 1.58869, -0.261014)
+texture_filter = 0
+texture = ExtResource("8_t4xlh")
 
 [node name="Desk4" parent="staticprops" instance=ExtResource("6_c6n01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 4.02847)
