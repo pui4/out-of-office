@@ -8,6 +8,8 @@ extends Node
 
 @export var room_has_real_door : bool
 
+@export var door_count : int
+
 signal task_interaction
 signal time_increased
 signal enter_new_room
@@ -36,6 +38,7 @@ func increase_time(secs: float) -> void:
 	time_increased.emit(secs)
 
 func _on_enter_new_room(name : String):
+	door_count += 1
 	if not guard_coming:
 		var chance : int = randi_range(0, chance_spawn - 1)
 		if chance == 0: # get his ass in
@@ -44,3 +47,5 @@ func _on_enter_new_room(name : String):
 			
 			get_tree().root.add_child(guard_inst)
 			guard_inst.global_position = guard_spawn_dist * -current_room.transform.basis.x
+	else:
+		get_tree().get_nodes_in_group("guard")[0].queue_free()

@@ -22,4 +22,5 @@ func _process(delta: float) -> void:
 	
 	if progress_ratio == 1:
 		get_tree().call_group("light", "turn_on")
+		Lib.guard_coming = false
 		queue_free()

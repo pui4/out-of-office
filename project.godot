@@ -35,6 +35,7 @@ task=""
 door_marker=""
 light=""
 guard_path=""
+guard=""
 
 [input]
 
