@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwhn8j3vd0a8f"]
+
+[ext_resource type="Script" path="res://scripts/room_managment.gd" id="1_ejuaj"]
+[ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_rdhd5"]
+[ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="2_63l7l"]
+[ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="3_qalk1"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="4_eyb7j"]
+[ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="5_r38y0"]
+[ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="6_63l7l"]
+[ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_qalk1"]
+[ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="8_eyb7j"]
+[ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="9_r38y0"]
+
+[node name="BigRoom2" type="Node3D"]
+script = ExtResource("1_ejuaj")
+
+[node name="DoorEnd" parent="." instance=ExtResource("1_rdhd5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="TSplit" parent="." instance=ExtResource("2_63l7l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 0)
+
+[node name="Turn" parent="." instance=ExtResource("3_qalk1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, -8)
+
+[node name="DoorEnd2" parent="." instance=ExtResource("1_rdhd5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -16)
+
+[node name="DeadEnd" parent="." instance=ExtResource("4_eyb7j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 28, 0, -8)
+
+[node name="TSplit2" parent="." instance=ExtResource("2_63l7l")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0, 0)
+
+[node name="Open" parent="." instance=ExtResource("5_r38y0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -8)
+
+[node name="DoorEnd3" parent="." instance=ExtResource("1_rdhd5")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 28, 0, 8)
+
+[node name="DoorEnd4" parent="." instance=ExtResource("1_rdhd5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="TSplit3" parent="." instance=ExtResource("2_63l7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 8)
+
+[node name="Turn2" parent="." instance=ExtResource("3_qalk1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 16)
+
+[node name="BigTable" parent="." instance=ExtResource("6_63l7l")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 12, 0, -8)
+
+[node name="Pillar" parent="." instance=ExtResource("7_qalk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -5)
+
+[node name="Desk" parent="." instance=ExtResource("8_eyb7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -1)
+
+[node name="Desk2" parent="." instance=ExtResource("8_eyb7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 1)
+
+[node name="Desk3" parent="." instance=ExtResource("8_eyb7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 3)
+
+[node name="BigTable2" parent="." instance=ExtResource("6_63l7l")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 20, 0, 16)
+
+[node name="RandomTaskSpawner" parent="." instance=ExtResource("9_r38y0")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 27, 0, -10)
+
+[node name="RandomTaskSpawner2" parent="." instance=ExtResource("9_r38y0")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 22, 0, 11)
+
+[node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(-1.07284e-07, 0, 1, 0, 1, 0, -1, 0, -1.07284e-07, 20, 0, -20)
+
+[node name="Marker3D2" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 8)
+
+[node name="Marker3D3" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(-1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, -1, 8, 0, 16)

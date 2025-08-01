@@ -15,7 +15,7 @@ signal enter_new_room
 @onready var guard : PackedScene = preload("res://billboard test.tscn")
 
 var guard_coming : bool
-var chance_spawn : int = 2
+var chance_spawn : int = 1000000
 var guard_spawn_dist : int = 1000
 var room_track : Path3D
 
