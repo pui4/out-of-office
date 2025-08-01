@@ -87,6 +87,7 @@ func _on_enter_new_room(name : String):
 		get_tree().get_nodes_in_group("guard")[0].queue_free()
 
 func kill(name : String):
+	time.stop()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	died_to = name
 	current_room.queue_free()
@@ -94,6 +95,8 @@ func kill(name : String):
 	audio_node.queue_free()
 	if is_instance_valid(player):
 		player.queue_free()
+	for guard in get_tree().get_nodes_in_group("guard"):
+		guard.queue_free()
 	
 	death_inst = death_screen.instantiate()
 	get_tree().root.add_child(death_inst)
@@ -113,6 +116,9 @@ func reset() -> void:
 	add_child(post_inst)
 	audio_node = AudioStreamPlayer.new()
 	add_child(audio_node)
+	base_ambiance.loop = true
+	audio_node.stream = base_ambiance
+	audio_node.play()
 	player = Lib.player_scene.instantiate()
 	get_tree().root.add_child(player)
 	player.global_position.y = 2.777
@@ -122,3 +128,7 @@ func reset() -> void:
 	var start_room : PackedScene = load("res://start_room.tscn")
 	var start_room_inst : Node3D = start_room.instantiate()
 	get_tree().root.add_child(start_room_inst)
+
+func _process(delta: float) -> void:
+	if is_instance_valid(audio_node) and door_count != 0:
+		audio_node.pitch_scale = remap(clamp(time.time_left, 0, 10), 0, 10, 2, 1)
