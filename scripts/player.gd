@@ -103,6 +103,8 @@ func _physics_process(delta: float) -> void:
 		#else:
 			#get_tree().call_group("light", "flicker")
 			#flickering = true
+	
+	#
 
 func _on_resize() -> void:
 	view.stretch_shrink = Lib.get_display_dense()
