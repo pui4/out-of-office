@@ -40,6 +40,7 @@ func increase_time(secs: float) -> void:
 func _on_enter_new_room(name : String):
 	door_count += 1
 	if not guard_coming:
+		chance_spawn = 100 / door_count + 2
 		var chance : int = randi_range(0, chance_spawn - 1)
 		if chance == 0: # get his ass in
 			get_tree().call_group("light", "flicker")
