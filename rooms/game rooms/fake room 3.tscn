@@ -95,4 +95,4 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0,
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 14, -4.76837e-07, 9)
 
 [node name="RandomTaskSpawner2" parent="." instance=ExtResource("12_jn2h7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 18.4)

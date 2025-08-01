@@ -1,20 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgu47g221aphv"]
+[gd_scene load_steps=7 format=3 uid="uid://dgu47g221aphv"]
 
 [ext_resource type="Script" uid="uid://dqjaqtftrwb7g" path="res://scripts/start_room.gd" id="1_rkvpa"]
-[ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_y61b1"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_rkvpa"]
 [ext_resource type="ArrayMesh" uid="uid://by4y5vyovn1ce" path="res://meshes/assets_exit sign.res" id="4_rkvpa"]
+[ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="5_0jcho"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="6_krux0"]
 
 [sub_resource type="Curve3D" id="Curve3D_eqsgk"]
 
 [node name="StartRoom" type="Node3D"]
 script = ExtResource("1_rkvpa")
-
-[node name="DoorEnd" parent="." instance=ExtResource("1_y61b1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="DoorEnd2" parent="." instance=ExtResource("1_y61b1")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 0)
 
 [node name="Door" parent="." instance=ExtResource("3_rkvpa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
@@ -26,3 +21,57 @@ skeleton = NodePath("../..")
 
 [node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
 curve = SubResource("Curve3D_eqsgk")
+
+[node name="Straight" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Straight2" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 0)
+
+[node name="Straight3" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 0)
+
+[node name="Straight4" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="Straight5" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+
+[node name="Straight6" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="Straight8" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+
+[node name="Straight9" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
+
+[node name="Straight10" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0)
+
+[node name="Straight11" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 0)
+
+[node name="Straight12" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 0, 0)
+
+[node name="DeadEnd" parent="." instance=ExtResource("6_krux0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 0)
+
+[node name="Straight13" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, 0, -1.74846e-06)
+
+[node name="Straight15" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0, -3.49691e-07)
+
+[node name="Straight16" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 59.3954, 0, 3.49691e-07)
+
+[node name="Straight17" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 67.3954, 0, 1.04907e-06)
+
+[node name="DeadEnd2" parent="." instance=ExtResource("6_krux0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 75.3954, 0, 1.74846e-06)
+
+[node name="Straight7" parent="." instance=ExtResource("5_0jcho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)

@@ -10,7 +10,7 @@ func _ready() -> void:
 		"fake_door":
 			hint_txt.text = "[center]You entered the managers office. Look out for them. They are different."
 		"guard":
-			hint_txt.text = "[center]You were grabbed by the guard. Hide next time?"
+			hint_txt.text = "[center]You were grabbed by the guard. Hide next time? In the shadows??"
 		"timeout":
 			hint_txt.text = "[center]Well done you tried. Maybe try doing more tasks?"
 	

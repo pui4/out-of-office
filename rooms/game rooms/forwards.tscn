@@ -35,7 +35,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28, 0,
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 22.0624, 2.38419e-07, 2.92801)
 
 [node name="RandomTaskSpawner2" parent="." instance=ExtResource("4_1oe8a")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 29.0624, 2.38419e-07, -3.07199)
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 29.0624, 2.38419e-07, -2.27199)
 chance_to_spawn = 4
 
 [node name="Desk" parent="." instance=ExtResource("5_qterg")]
