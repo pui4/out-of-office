@@ -57,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0144043, 1.55151, -0.013305
 shape = SubResource("BoxShape3D_dcarl")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(-8.32502, 0, -7.27797e-07, 0, 8.32502, 0, 7.27797e-07, 0, -8.32502, 0, 2.29948, -0.0262465)
+transform = Transform3D(-3.15948, 0, -2.7621e-07, 0, 3.15948, 0, 2.7621e-07, 0, -3.15948, 0, 2.29948, -0.0262465)
 texture_filter = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
