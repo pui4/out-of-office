@@ -88,6 +88,8 @@ func kill(name : String):
 	current_room.queue_free()
 	post_inst.queue_free()
 	audio_node.queue_free()
+	if is_instance_valid(player):
+		player.queue_free()
 	
 	death_inst = death_screen.instantiate()
 	get_tree().root.add_child(death_inst)
