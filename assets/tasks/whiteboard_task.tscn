@@ -64,6 +64,7 @@ texture_filter = 0
 libraries = {
 &"": SubResource("AnimationLibrary_bp341")
 }
+speed_scale = 2.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30293, 0)

@@ -1,6 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dsu0ao84mfswy"]
 
 [ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="1_n20gm"]
+[ext_resource type="Script" uid="uid://c8lcclhdhicva" path="res://scripts/intro.gd" id="1_pi5aw"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_xy2ur"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="3_c6n01"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="4_7fbs8"]
@@ -10,14 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="8_gch8k"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="9_qbala"]
 [ext_resource type="ArrayMesh" uid="uid://by4y5vyovn1ce" path="res://meshes/assets_exit sign.res" id="10_pi5aw"]
-[ext_resource type="PackedScene" uid="uid://bqw0knrt75wxm" path="res://billboard test.tscn" id="11_pi5aw"]
 
 [sub_resource type="Animation" id="Animation_qbala"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -41,7 +41,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Camera3D:position")
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -57,7 +57,7 @@ length = 8.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -69,7 +69,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -98,6 +98,7 @@ _data = {
 }
 
 [node name="Intro" type="Node3D"]
+script = ExtResource("1_pi5aw")
 
 [node name="staticprops" type="Node3D" parent="."]
 
@@ -231,14 +232,11 @@ transform = Transform3D(0.898718, 0, -0.438528, 0, 1, 0, 0.438528, 0, 0.898718, 
 
 [node name="cutscene props" type="Node3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="cutscene props"]
-transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, 1.46443, 1.44413, 1.95552)
-fov = 82.3
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene props"]
 libraries = {
 &"": SubResource("AnimationLibrary_rgan4")
 }
+autoplay = "cutscene"
 
 [node name="Door" parent="cutscene props" instance=ExtResource("9_qbala")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23244, -5, -6)
@@ -248,5 +246,24 @@ transform = Transform3D(-3.13411e-08, 0, -0.215, 0, 0.358, 0, 0.717, 0, -9.39795
 mesh = ExtResource("10_pi5aw")
 skeleton = NodePath("../..")
 
-[node name="BillboardTest" parent="." instance=ExtResource("11_pi5aw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.2232)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="cutscene props"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="cutscene props/SubViewportContainer"]
+size = Vector2i(288, 162)
+
+[node name="Camera3D" type="Camera3D" parent="cutscene props/SubViewportContainer/SubViewport"]
+transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, 1.46443, 1.44413, 1.95552)
+fov = 82.3
+
+[node name="PlayerTarget" type="Marker3D" parent="cutscene props/SubViewportContainer/SubViewport/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477, 0)
+
+[connection signal="animation_finished" from="cutscene props/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
