@@ -70,5 +70,5 @@ mesh = ExtResource("10_eoley")
 transform = Transform3D(-0.939501, 1.49731e-08, 0.342545, 0.342545, 4.10669e-08, 0.939501, 0, 1, -4.37114e-08, 6.38973, 3.13214, -3.88562)
 mesh = ExtResource("10_eoley")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, 12)
