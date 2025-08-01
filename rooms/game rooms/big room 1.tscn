@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvtn2v0pc44pj"]
+[gd_scene load_steps=14 format=3 uid="uid://bvtn2v0pc44pj"]
 
-[ext_resource type="Script" path="res://scripts/room_managment.gd" id="1_s1f1k"]
+[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_s1f1k"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="2_sd7g6"]
 [ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="4_kqa1l"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="5_m8mr0"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="7_gf23h"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="8_xe5cc"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="9_xe5cc"]
+[ext_resource type="ArrayMesh" uid="uid://pkc47k7j0ybj" path="res://meshes/assets_corkboard.res" id="10_f50af"]
+[ext_resource type="ArrayMesh" uid="uid://c38poql8r3set" path="res://meshes/assets_paper warning.res" id="11_ugt1l"]
+[ext_resource type="ArrayMesh" uid="uid://dqrwmxjq2pix2" path="res://meshes/assets_paper arrow.res" id="12_y5ibb"]
 
 [sub_resource type="Curve3D" id="Curve3D_xe5cc"]
 _data = {
@@ -103,3 +106,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 18)
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_xe5cc")
+
+[node name="AssetsCorkboard" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16, 3, 0)
+mesh = ExtResource("10_f50af")
+
+[node name="AssetsPaperWarning" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -0.954652, -1.57012e-08, -0.297725, 0.297725, 9.64723e-08, -0.954652, 15.9, 3.03109, -0.60081)
+mesh = ExtResource("11_ugt1l")
+
+[node name="AssetsPaperArrow" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, -0.258819, 1.13133e-08, 0.965926, -0.965926, 4.2222e-08, -0.258819, 15.9364, 2.84639, 0.589885)
+mesh = ExtResource("12_y5ibb")
+
+[node name="AssetsPaperArrow2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, -0.5, 2.18557e-08, 0.866025, -0.866025, 3.78552e-08, -0.5, 31.9, 3, -5.6)
+mesh = ExtResource("12_y5ibb")

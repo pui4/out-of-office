@@ -48,6 +48,14 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_coffee.res"
 },
+"assets_corkboard": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_corkboard.res"
+},
 "assets_cubicle": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -119,6 +127,30 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_open.res"
+},
+"assets_paper arrow": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_paper arrow.res"
+},
+"assets_paper blank": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_paper blank.res"
+},
+"assets_paper warning": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_paper warning.res"
 },
 "assets_pillar": {
 "generate/lightmap_uv": 0,
