@@ -8,6 +8,9 @@ extends Control
 func _ready() -> void:
 	Lib.time_increased.connect(_on_increase_time)
 	Lib.enter_new_room.connect(_on_open_door)
+	Lib.run_start.connect(_on_run_start)
+	time_txt.hide()
+	door_txt.hide()
 
 func _process(delta: float) -> void:
 	var mins : int = floor(Lib.time.time_left / 60)
@@ -24,3 +27,7 @@ func _on_increase_time(secs : float) -> void:
 
 func _on_open_door(name : String) -> void:
 	door_txt.text = "[wave][center]DOOR: %s" % Lib.door_count
+
+func _on_run_start() -> void:
+	time_txt.show()
+	door_txt.show()

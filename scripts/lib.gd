@@ -13,6 +13,7 @@ extends Node
 signal task_interaction
 signal time_increased
 signal enter_new_room
+signal run_start
 
 @onready var guard : PackedScene = preload("res://billboard test.tscn")
 
@@ -21,14 +22,21 @@ var chance_spawn : int = 5
 var guard_spawn_dist : int = 1000
 var room_track : Path3D
 
+@onready var postprocess : PackedScene = preload("res://assets/post_process.tscn")
+
 func _ready() -> void:
 	time = Timer.new()
 	add_child(time)
 	time.wait_time = base_time
 	
-	time.start() # TODO: Replace this to start when the game loads
-	
 	enter_new_room.connect(_on_enter_new_room)
+	
+	var post_inst : CanvasLayer = postprocess.instantiate()
+	add_child(post_inst)
+
+func start_run() -> void:
+	time.start()
+	run_start.emit()
 
 func increase_time(secs: float) -> void:
 	var old_time : float = time.time_left
@@ -38,6 +46,9 @@ func increase_time(secs: float) -> void:
 	time_increased.emit(secs)
 
 func _on_enter_new_room(name : String):
+	print(door_count)
+	if door_count == 0:
+		start_run()
 	door_count += 1
 	if not guard_coming:
 		chance_spawn = (100 / door_count) + 2

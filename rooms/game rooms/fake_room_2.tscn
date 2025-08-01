@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://c57xybd2uvbji"]
+[gd_scene load_steps=13 format=3 uid="uid://32x3o0epacqp"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_begwe"]
-[ext_resource type="Script" path="res://scripts/room_managment.gd" id="1_yktvk"]
+[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_yktvk"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="2_61gb3"]
 [ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="3_1fwto"]
 [ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="4_u2swg"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="7_42g3q"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="8_bvlw7"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="9_p6grn"]
-[ext_resource type="PackedScene" path="res://modules/open_no_light.tscn" id="9_ur8dd"]
+[ext_resource type="PackedScene" uid="uid://dxqr11sr840th" path="res://modules/open_no_light.tscn" id="9_ur8dd"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="11_42g3q"]
 
 [sub_resource type="Curve3D" id="Curve3D_ur8dd"]

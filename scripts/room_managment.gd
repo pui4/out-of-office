@@ -11,11 +11,7 @@ func _ready() -> void:
 	add_child(rdoor_inst)
 	rdoor_inst.global_transform = markers[target_real].global_transform
 	
-	print(target_real)
-	print(len(markers) - 1)
-	print(len(markers))
 	markers.remove_at(target_real)
-	print(len(markers))
 	for marker in markers:
 		var fdoor_inst : Node3D = fake_door.instantiate()
 		add_child(fdoor_inst)
