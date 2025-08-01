@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2wrvh1cf2r80"]
+[gd_scene load_steps=13 format=3 uid="uid://d2wrvh1cf2r80"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_3gv8q"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_i5sfh"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="6_v6hn0"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="7_e1q2s"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="8_2rtln"]
+[ext_resource type="ArrayMesh" uid="uid://pkc47k7j0ybj" path="res://meshes/assets_corkboard.res" id="9_n7upl"]
+[ext_resource type="ArrayMesh" uid="uid://c38poql8r3set" path="res://meshes/assets_paper warning.res" id="10_6gfhh"]
+[ext_resource type="ArrayMesh" uid="uid://dqrwmxjq2pix2" path="res://meshes/assets_paper arrow.res" id="11_o0ytw"]
 
 [sub_resource type="Curve3D" id="Curve3D_qterg"]
 _data = {
@@ -57,3 +60,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0,
 
 [node name="TSplit" parent="." instance=ExtResource("8_2rtln")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 0)
+
+[node name="AssetsCorkboard" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24, 3, -6.2356)
+mesh = ExtResource("9_n7upl")
+
+[node name="AssetsPaperWarning" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -0.982304, -2.6564e-08, 0.187296, -0.187296, -9.40627e-08, -0.982304, 23.9, 3.0982, -5.49722)
+mesh = ExtResource("10_6gfhh")
+
+[node name="AssetsPaperArrow" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 6.16922e-16, 0.0871559, -3.8097e-09, -0.996195, 0.996195, -4.35451e-08, 0.0871559, 23.7, 3.1, -6.7356)
+mesh = ExtResource("11_o0ytw")

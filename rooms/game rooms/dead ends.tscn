@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bidxxgoh1kgci"]
+[gd_scene load_steps=12 format=3 uid="uid://bidxxgoh1kgci"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_0rvry"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="2_2kyca"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="6_f8jl1"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="7_lsfbq"]
 [ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="8_lsfbq"]
+[ext_resource type="ArrayMesh" uid="uid://dqrwmxjq2pix2" path="res://meshes/assets_paper arrow.res" id="9_krf07"]
+[ext_resource type="ArrayMesh" uid="uid://pkc47k7j0ybj" path="res://meshes/assets_corkboard.res" id="10_0rw54"]
 
 [sub_resource type="Curve3D" id="Curve3D_lsfbq"]
 _data = {
@@ -75,3 +77,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
 
 [node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
 curve = SubResource("Curve3D_lsfbq")
+
+[node name="AssetsPaperArrow" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, -0.152555, 6.66838e-09, -0.988295, 0.988295, -4.31997e-08, -0.152555, 14.6, 2.84931, -0.556968)
+mesh = ExtResource("9_krf07")
+
+[node name="AssetsPaperArrow2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.257183, -1.12418e-08, 0.966363, -0.966363, 4.2241e-08, 0.257183, 14.6, 3.19365, 0.617903)
+mesh = ExtResource("9_krf07")
+
+[node name="AssetsCorkboard" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.7, 3, 0)
+mesh = ExtResource("10_0rw54")
