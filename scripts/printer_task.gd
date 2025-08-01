@@ -2,6 +2,7 @@ extends StaticBody3D
 
 @onready var error_sfx : AudioStreamPlayer3D = $"AudioStreamPlayer3D"
 @onready var done_sfx : RandomSound3D = $"RandomSound3D"
+@onready var click : AudioStreamPlayer3D = $AudioStreamPlayer3D2
 
 @onready var red_light : Sprite3D = $"RedLight"
 @onready var green_light : Sprite3D = $"GreenLight"
@@ -16,6 +17,7 @@ func _ready() -> void:
 func _on_interaction(hit : Node3D) -> void:
 	if hit == self and not done:
 		error_sfx.stop()
+		click.play()
 		done_sfx.play_random()
 		red_light.hide()
 		green_light.show()

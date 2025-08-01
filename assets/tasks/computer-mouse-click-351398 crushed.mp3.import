@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cid865qvhx64f"
+path="res://.godot/imported/computer-mouse-click-351398 crushed.mp3-253f7bc35fc4fc07929c546dc9f54c2b.mp3str"
+
+[deps]
+
+source_file="res://assets/tasks/computer-mouse-click-351398 crushed.mp3"
+dest_files=["res://.godot/imported/computer-mouse-click-351398 crushed.mp3-253f7bc35fc4fc07929c546dc9f54c2b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
