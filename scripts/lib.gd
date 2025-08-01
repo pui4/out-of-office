@@ -28,9 +28,12 @@ var post_inst : CanvasLayer
 @onready var death_screen : PackedScene = preload("res://death.tscn")
 
 var died_to : String
+var death_inst : Control
 
 @onready var music : AudioStreamMP3 = preload("res://sfx/music.mp3")
 var audio_node : AudioStreamPlayer
+
+@onready var player_scene : PackedScene = preload("res://assets/player.tscn")
 
 func _ready() -> void:
 	time = Timer.new()
@@ -86,8 +89,30 @@ func kill(name : String):
 	post_inst.queue_free()
 	audio_node.queue_free()
 	
-	var death_inst : Control = death_screen.instantiate()
+	death_inst = death_screen.instantiate()
 	get_tree().root.add_child(death_inst)
 
 func _on_timeout() -> void:
 	kill("timeout")
+
+func reset() -> void:
+	# Reset old variables
+	door_count = 0
+	time.stop()
+	time.wait_time = base_time
+	death_inst.queue_free()
+	
+	# Load back in starting things
+	post_inst = postprocess.instantiate()
+	add_child(post_inst)
+	audio_node = AudioStreamPlayer.new()
+	add_child(audio_node)
+	player = Lib.player_scene.instantiate()
+	get_tree().root.add_child(player)
+	player.global_position.y = 2.777
+	player.global_rotation_degrees.y = -90
+	
+	# Load start room
+	var start_room : PackedScene = load("res://start_room.tscn")
+	var start_room_inst : Node3D = start_room.instantiate()
+	get_tree().root.add_child(start_room_inst)

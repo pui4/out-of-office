@@ -18,4 +18,4 @@ func _ready() -> void:
 	anim.play("start")
 
 func _on_button_pressed() -> void:
-	print("presseesd")
+	Lib.reset()
