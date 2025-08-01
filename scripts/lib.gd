@@ -23,6 +23,11 @@ var guard_spawn_dist : int = 1000
 var room_track : Path3D
 
 @onready var postprocess : PackedScene = preload("res://assets/post_process.tscn")
+var post_inst : CanvasLayer
+
+@onready var death_screen : PackedScene = preload("res://death.tscn")
+
+var died_to : String
 
 func _ready() -> void:
 	time = Timer.new()
@@ -31,7 +36,7 @@ func _ready() -> void:
 	
 	enter_new_room.connect(_on_enter_new_room)
 	
-	var post_inst : CanvasLayer = postprocess.instantiate()
+	post_inst = postprocess.instantiate()
 	add_child(post_inst)
 
 func start_run() -> void:
@@ -61,3 +66,12 @@ func _on_enter_new_room(name : String):
 			guard_inst.global_position = guard_spawn_dist * -current_room.transform.basis.x
 	else:
 		get_tree().get_nodes_in_group("guard")[0].queue_free()
+
+func kill(name : String):
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	died_to = name
+	current_room.queue_free()
+	post_inst.queue_free()
+	
+	var death_inst : Control = death_screen.instantiate()
+	get_tree().root.add_child(death_inst)

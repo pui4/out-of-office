@@ -6,11 +6,13 @@ extends Area3D
 @onready var actual_cam : Camera3D = $"SubViewportContainer/SubViewport/Camera3D2"
 
 func _on_body_entered(body: Node3D) -> void:
-	print("Sa")
 	if body.name == "Player":
 		Lib.player.queue_free()
 		subview.show()
 		anim.play("kill")
+		
+		await  get_tree().create_timer(1.2).timeout
+		Lib.kill("fake_door")
 		
 func _process(delta: float) -> void:
 	actual_cam.global_transform = target_cam.global_transform
