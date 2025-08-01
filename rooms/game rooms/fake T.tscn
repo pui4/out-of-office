@@ -74,3 +74,9 @@ mesh = ExtResource("9_am4jt")
 [node name="AssetsPaperBlank" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 0.934036, -4.0828e-08, 0.357178, -0.357178, 1.56128e-08, 0.934036, 23.9, 3.01969, 15.4628)
 mesh = ExtResource("10_gmnpf")
+
+[node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, -12)
+
+[node name="Marker3D2" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(8.9407e-08, 0, -1, 0, 1, 0, 1, 0, 8.9407e-08, 20, 0, 19)
