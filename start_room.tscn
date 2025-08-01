@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgu47g221aphv"]
+[gd_scene load_steps=6 format=3 uid="uid://dgu47g221aphv"]
 
 [ext_resource type="Script" uid="uid://dqjaqtftrwb7g" path="res://scripts/start_room.gd" id="1_rkvpa"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_y61b1"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_rkvpa"]
+[ext_resource type="ArrayMesh" uid="uid://by4y5vyovn1ce" path="res://meshes/assets_exit sign.res" id="4_rkvpa"]
 
 [sub_resource type="Curve3D" id="Curve3D_eqsgk"]
 
@@ -17,6 +18,11 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 
 
 [node name="Door" parent="." instance=ExtResource("3_rkvpa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="AssetsExitSign" type="MeshInstance3D" parent="Door"]
+transform = Transform3D(-3.13411e-08, 0, -0.215, 0, 0.358, 0, 0.717, 0, -9.39795e-09, 0, 4, -0.0946622)
+mesh = ExtResource("4_rkvpa")
+skeleton = NodePath("../..")
 
 [node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
 curve = SubResource("Curve3D_eqsgk")
