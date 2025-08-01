@@ -8,6 +8,7 @@ extends Area3D
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
+		subview.stretch_shrink = Lib.get_display_dense()
 		Lib.player.queue_free()
 		subview.show()
 		anim.play("kill")

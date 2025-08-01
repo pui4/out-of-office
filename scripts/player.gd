@@ -15,6 +15,7 @@ extends CharacterBody3D
 @onready var head : Node3D = $"SubViewportContainer/SubViewport/head"
 @onready var camera : Camera3D = $"SubViewportContainer/SubViewport/head/Camera3D"
 @onready var arm_cam : Camera3D = $"SubViewportContainer/SubViewport2/Camera3D2"
+@onready var view : SubViewportContainer = $"SubViewportContainer"
 
 @onready var target_head : Marker3D = $"target_head"
 @onready var target_camera : Marker3D = $"target_head/target_camera"
@@ -33,6 +34,8 @@ func _ready() -> void:
 	max_accel *= max_speed
 	
 	arm_anim.speed_scale = 1.5
+	
+	view.stretch_shrink = Lib.get_display_dense()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -91,10 +94,10 @@ func _physics_process(delta: float) -> void:
 			if hit.is_in_group("task"):
 				Lib.task_interaction.emit(hit)
 			
-	if Input.is_action_just_pressed("testing"):
-		if flickering:
-			get_tree().call_group("light", "stop_flicker")
-			flickering = false
-		else:
-			get_tree().call_group("light", "flicker")
-			flickering = true
+	#if Input.is_action_just_pressed("testing"):
+		#if flickering:
+			#get_tree().call_group("light", "stop_flicker")
+			#flickering = false
+		#else:
+			#get_tree().call_group("light", "flicker")
+			#flickering = true

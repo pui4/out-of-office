@@ -132,3 +132,6 @@ func reset() -> void:
 func _process(delta: float) -> void:
 	if is_instance_valid(audio_node) and door_count != 0:
 		audio_node.pitch_scale = remap(clamp(time.time_left, 0, 10), 0, 10, 2, 1)
+
+func get_display_dense() -> int:
+	return remap(get_window().size.x, 0, 1152, 0, 4)
