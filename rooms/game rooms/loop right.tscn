@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="8_81386"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="9_1hl4i"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="10_agcy2"]
-[ext_resource type="ArrayMesh" uid="uid://pkc47k7j0ybj" path="res://meshes/assets_corkboard.res" id="11_3vu8e"]
-[ext_resource type="ArrayMesh" uid="uid://dqrwmxjq2pix2" path="res://meshes/assets_paper arrow.res" id="12_g0i04"]
+[ext_resource type="ArrayMesh" uid="uid://6gffv323ures" path="res://meshes/assets_corkboard.res" id="11_3vu8e"]
+[ext_resource type="ArrayMesh" uid="uid://3ir6c3x2f35o" path="res://meshes/assets_paper arrow.res" id="12_g0i04"]
 
 [sub_resource type="Curve3D" id="Curve3D_81386"]
 _data = {

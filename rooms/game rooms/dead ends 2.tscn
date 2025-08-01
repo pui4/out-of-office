@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="5_ldh31"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="6_8r5wp"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="7_nrh2r"]
-[ext_resource type="ArrayMesh" uid="uid://pkc47k7j0ybj" path="res://meshes/assets_corkboard.res" id="8_ldh31"]
-[ext_resource type="ArrayMesh" uid="uid://bqhbm2cl785g8" path="res://meshes/assets_paper blank.res" id="9_mxq4o"]
+[ext_resource type="ArrayMesh" uid="uid://6gffv323ures" path="res://meshes/assets_corkboard.res" id="8_ldh31"]
+[ext_resource type="ArrayMesh" uid="uid://b8bc8xyw38ggs" path="res://meshes/assets_paper blank.res" id="9_mxq4o"]
 
 [sub_resource type="Curve3D" id="Curve3D_8r5wp"]
 _data = {

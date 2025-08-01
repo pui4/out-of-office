@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="6_4uhlu"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_m2pks"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="7_ds4yr"]
-[ext_resource type="ArrayMesh" uid="uid://pkc47k7j0ybj" path="res://meshes/assets_corkboard.res" id="8_ds4yr"]
-[ext_resource type="ArrayMesh" uid="uid://c38poql8r3set" path="res://meshes/assets_paper warning.res" id="9_j5r0s"]
-[ext_resource type="ArrayMesh" uid="uid://dqrwmxjq2pix2" path="res://meshes/assets_paper arrow.res" id="10_j5r0s"]
+[ext_resource type="ArrayMesh" uid="uid://6gffv323ures" path="res://meshes/assets_corkboard.res" id="8_ds4yr"]
+[ext_resource type="ArrayMesh" uid="uid://c8d6p8q0hroxn" path="res://meshes/assets_paper warning.res" id="9_j5r0s"]
+[ext_resource type="ArrayMesh" uid="uid://3ir6c3x2f35o" path="res://meshes/assets_paper arrow.res" id="10_j5r0s"]
 
 [sub_resource type="Curve3D" id="Curve3D_iegfs"]
 _data = {
