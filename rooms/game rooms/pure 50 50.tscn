@@ -1,3 +1,94 @@
-[gd_scene load_steps=0 format=3 uid="uid://hxckseh5pbbf"]
+[gd_scene load_steps=15 format=3 uid="uid://hxckseh5pbbf"]
+
+[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_316if"]
+[ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_lw0wg"]
+[ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_jmjgb"]
+[ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="3_4oeot"]
+[ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="4_4oeot"]
+[ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="6_ns6x8"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="7_g4xyq"]
+[ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="8_tj7ii"]
+[ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="9_erby8"]
+[ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="10_er8ds"]
+[ext_resource type="ArrayMesh" uid="uid://6gffv323ures" path="res://meshes/assets_corkboard.res" id="11_ep7lb"]
+[ext_resource type="ArrayMesh" uid="uid://c8d6p8q0hroxn" path="res://meshes/assets_paper warning.res" id="12_s1i3c"]
+[ext_resource type="ArrayMesh" uid="uid://3ir6c3x2f35o" path="res://meshes/assets_paper arrow.res" id="13_8aiec"]
+
+[sub_resource type="Curve3D" id="Curve3D_s1i3c"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, -8, 0, 0, 0, 0, 0, 0, 28, 0, -8, 0, 0, 0, 0, 0, 0, 20, 0, -8, 0, 0, 0, 0, 0, 0, 20, 0, 8, 0, 0, 0, 0, 0, 0, 32, 0, 8),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
 
 [node name="Pure5050" type="Node3D"]
+script = ExtResource("1_316if")
+
+[node name="DoorEnd" parent="." instance=ExtResource("1_lw0wg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Straight" parent="." instance=ExtResource("2_jmjgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="TSplit" parent="." instance=ExtResource("3_4oeot")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0, 0)
+
+[node name="Turn" parent="." instance=ExtResource("4_4oeot")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -8)
+
+[node name="DoorEnd2" parent="." instance=ExtResource("1_lw0wg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 28, 0, -8)
+
+[node name="DoorEnd3" parent="." instance=ExtResource("1_lw0wg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 28, 0, 8)
+
+[node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -8)
+
+[node name="Marker3D2" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 8)
+
+[node name="Pillar" parent="." instance=ExtResource("6_ns6x8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="TSplit2" parent="." instance=ExtResource("3_4oeot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 8)
+
+[node name="DeadEnd" parent="." instance=ExtResource("7_g4xyq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 16)
+
+[node name="Desk" parent="." instance=ExtResource("8_tj7ii")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.5, 0, -10)
+
+[node name="Desk3" parent="." instance=ExtResource("8_tj7ii")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.5, 0, -10)
+
+[node name="Desk2" parent="." instance=ExtResource("8_tj7ii")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.5, 0, -10)
+
+[node name="BigTable" parent="." instance=ExtResource("9_erby8")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 19, 0, 5)
+
+[node name="RandomTaskSpawner" parent="." instance=ExtResource("10_er8ds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 13)
+
+[node name="RandomTaskSpawner2" parent="." instance=ExtResource("10_er8ds")]
+transform = Transform3D(-1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, -1, 26, 0, -10)
+
+[node name="AssetsCorkboard" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 24, 3, 0)
+mesh = ExtResource("11_ep7lb")
+
+[node name="AssetsPaperWarning" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, -0.986555, 4.31237e-08, -0.163429, 0.163429, -7.14372e-09, -0.986555, 23.9, 3.101, -0.698736)
+mesh = ExtResource("12_s1i3c")
+
+[node name="AssetsPaperArrow" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.258819, -1.13133e-08, 0.965926, -0.965926, 4.2222e-08, 0.258819, 23.9, 3, 0.583833)
+mesh = ExtResource("13_8aiec")
+
+[node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
+curve = SubResource("Curve3D_s1i3c")
+
+[node name="Desk4" parent="." instance=ExtResource("8_tj7ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 0, -2)
