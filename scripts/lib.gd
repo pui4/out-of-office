@@ -38,6 +38,7 @@ func _ready() -> void:
 	
 	post_inst = postprocess.instantiate()
 	add_child(post_inst)
+	time.timeout.connect(_on_timeout)
 
 func start_run() -> void:
 	time.start()
@@ -75,3 +76,6 @@ func kill(name : String):
 	
 	var death_inst : Control = death_screen.instantiate()
 	get_tree().root.add_child(death_inst)
+
+func _on_timeout() -> void:
+	kill("timeout")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://dyf0d38mx03j5"]
+[gd_scene load_steps=14 format=4 uid="uid://dyf0d38mx03j5"]
 
 [ext_resource type="ArrayMesh" uid="uid://bjfkffbddmwsu" path="res://meshes/assets_fake door.res" id="1_fntvb"]
 [ext_resource type="Script" uid="uid://cr04l3uiidach" path="res://scripts/fake_door.gd" id="1_r7c5k"]
 [ext_resource type="Shader" uid="uid://dsrhs4l4xh8at" path="res://custom_shaders/door_behind.gdshader" id="2_0g7mh"]
 [ext_resource type="Material" uid="uid://cw732xkv1nedc" path="res://pallet_mat.tres" id="4_r7c5k"]
+[ext_resource type="AudioStream" uid="uid://c4dahx28aa82r" path="res://sfx/fake_door.mp3" id="5_nj4ng"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fntvb"]
 size = Vector3(0.198792, 3.96729, 2.34674)
@@ -283,5 +284,8 @@ render_target_update_mode = 0
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.003159, 0, 0.999995, 0, 1, 0, -0.999995, 0, 0.003159, 0.710794, 3, 0)
 fov = 100.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nj4ng")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

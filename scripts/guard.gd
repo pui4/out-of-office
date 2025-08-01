@@ -25,7 +25,6 @@ func _process(delta: float) -> void:
 		Lib.guard_coming = false
 		queue_free()
 
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		Lib.kill("guard")
