@@ -7,18 +7,21 @@ extends PathFollow3D
 var setup : bool = true
 
 func _process(delta: float) -> void:
-	if global_position.distance_to(Lib.current_room.global_position) <= 10 and setup:
-		global_transform = Lib.room_track.global_transform
-		reparent(Lib.room_track)
-		get_tree().call_group("light", "stop_flicker")
-		get_tree().call_group("light", "turn_off")
-		
-		await get_tree().create_timer(randf_range(0.5, 1))
-		setup = false
-	elif global_position.distance_to(Lib.current_room.global_position) > 10 and setup:
-		global_position = global_position.lerp(Lib.current_room.global_position, chase_speed * delta)
+	if is_instance_valid(Lib.current_room):
+		if global_position.distance_to(Lib.current_room.global_position) <= 10 and setup:
+			global_transform = Lib.room_track.global_transform
+			reparent(Lib.room_track)
+			get_tree().call_group("light", "stop_flicker")
+			get_tree().call_group("light", "turn_off")
+			
+			await get_tree().create_timer(randf_range(0.5, 1))
+			setup = false
+		elif global_position.distance_to(Lib.current_room.global_position) > 10 and setup:
+			global_position = global_position.lerp(Lib.current_room.global_position, chase_speed * delta)
+		else:
+			progress += track_speed * delta
 	else:
-		progress += track_speed * delta
+		queue_free()
 	
 	if progress_ratio == 1:
 		get_tree().call_group("light", "turn_on")

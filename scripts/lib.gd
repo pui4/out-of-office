@@ -4,7 +4,7 @@ extends Node
 @export var player : CharacterBody3D
 
 @export var time : Timer
-@export var base_time : float = 120
+@export var base_time : float = 10
 
 @export var room_has_real_door : bool
 
@@ -57,7 +57,8 @@ func _on_enter_new_room(name : String):
 		start_run()
 	door_count += 1
 	if not guard_coming:
-		chance_spawn = (100 / door_count) + 2
+		#chance_spawn = (100 / door_count) + 2
+		chance_spawn = 2
 		var chance : int = randi_range(0, chance_spawn - 1)
 		if chance == 0: # get his ass in
 			get_tree().call_group("light", "flicker")
