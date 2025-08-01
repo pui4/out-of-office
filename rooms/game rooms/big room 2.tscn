@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwhn8j3vd0a8f"]
+[gd_scene load_steps=12 format=3 uid="uid://dwhn8j3vd0a8f"]
 
 [ext_resource type="Script" path="res://scripts/room_managment.gd" id="1_ejuaj"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_rdhd5"]
@@ -10,6 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_qalk1"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="8_eyb7j"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="9_r38y0"]
+
+[sub_resource type="Curve3D" id="Curve3D_ejuaj"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, -8, 0, 0, 0, 0, 0, 0, 20, 0, -8, 0, 0, 0, 0, 0, 0, 20, 0, -16, 0, 0, 0, 0, 0, 0, 20, 0, 8, 0, 0, 0, 0, 0, 0, 28, 0, 8, 0, 0, 0, 0, 0, 0, 20, 0, 8, 0, 0, 0, 0, 0, 0, 20, 0, 16, 0, 0, 0, 0, 0, 0, 8, 0, 16),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
 
 [node name="BigRoom2" type="Node3D"]
 script = ExtResource("1_ejuaj")
@@ -79,3 +86,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 8)
 
 [node name="Marker3D3" type="Marker3D" parent="." groups=["door_marker"]]
 transform = Transform3D(-1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, -1, 8, 0, 16)
+
+[node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
+curve = SubResource("Curve3D_ejuaj")

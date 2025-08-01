@@ -19,7 +19,7 @@ func _on_interaction(hit : Node3D) -> void:
 	if hit == self and not done:
 		anim.play("wipe_board")
 		sfx.play()
-		Lib.increase_time(10)
+		Lib.increase_time(3)
 		done = true
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
