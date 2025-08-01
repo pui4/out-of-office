@@ -25,11 +25,13 @@ func flicker() -> void:
 func stop_flicker() -> void:
 	anim.stop()
 	anim.play("RESET")
+	anim.stop()
 
 func turn_off() -> void:
 	up_light.light_energy = 0
 	down_light.light_energy = 0
 
 func turn_on() -> void:
+	await get_tree().create_timer(randf_range(0.1, 0.3)).timeout
 	down_light.light_energy = 1
 	up_light.light_energy = target_light_energy

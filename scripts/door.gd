@@ -29,6 +29,7 @@ func _on_body_entered(body: Node3D) -> void:
 		Lib.room_has_real_door = false
 		
 		Lib.enter_new_room.emit(rooms[target_room])
+		Lib.room_track = room_inst.get_node("Path3D")
 		
 		# Spawn and launch door
 		var door_inst : RigidBody3D = phys_door.instantiate()

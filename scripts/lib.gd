@@ -43,6 +43,4 @@ func _on_enter_new_room(name : String):
 			var guard_inst : PathFollow3D = guard.instantiate()
 			
 			get_tree().root.add_child(guard_inst)
-			guard_inst.global_position = Vector3(-guard_spawn_dist, 0, guard_spawn_dist) * current_room.global_position
-			
-			room_track = get_tree().get_nodes_in_group("guard_path")[0]
+			guard_inst.global_position = guard_spawn_dist * -current_room.transform.basis.x

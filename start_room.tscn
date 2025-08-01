@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgu47g221aphv"]
+[gd_scene load_steps=7 format=3 uid="uid://dgu47g221aphv"]
 
 [ext_resource type="Script" uid="uid://dqjaqtftrwb7g" path="res://scripts/start_room.gd" id="1_rkvpa"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_y61b1"]
 [ext_resource type="PackedScene" uid="uid://c6fbbsp7rem6o" path="res://assets/player.tscn" id="2_x135f"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_rkvpa"]
 [ext_resource type="PackedScene" uid="uid://xvgg5wi7hg0r" path="res://assets/post_process.tscn" id="5_eqsgk"]
+
+[sub_resource type="Curve3D" id="Curve3D_eqsgk"]
 
 [node name="StartRoom" type="Node3D"]
 
@@ -22,5 +24,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 
 
 [node name="Door" parent="Room" instance=ExtResource("3_rkvpa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Path3D" type="Path3D" parent="Room" groups=["guard_path"]]
+curve = SubResource("Curve3D_eqsgk")
 
 [node name="PostProcessing" parent="." instance=ExtResource("5_eqsgk")]
