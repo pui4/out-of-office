@@ -87,8 +87,9 @@ func _physics_process(delta: float) -> void:
 	# Check for interactions
 	if Input.is_action_just_pressed("interact") and raycast.is_colliding():
 		var hit : Node3D = raycast.get_collider()
-		if hit.is_in_group("task"):
-			Lib.task_interaction.emit(hit)
+		if hit != null:
+			if hit.is_in_group("task"):
+				Lib.task_interaction.emit(hit)
 			
 	if Input.is_action_just_pressed("testing"):
 		if flickering:

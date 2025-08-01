@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		get_tree().call_group("light", "stop_flicker")
 		get_tree().call_group("light", "turn_off")
 		
-		await get_tree().create_timer(randf_range(0.5, 1)) 
+		await get_tree().create_timer(randf_range(0.5, 1))
 		setup = false
 	elif global_position.distance_to(Lib.current_room.global_position) > 10 and setup:
 		global_position = global_position.lerp(Lib.current_room.global_position, chase_speed * delta)
@@ -23,3 +23,9 @@ func _process(delta: float) -> void:
 	if progress_ratio == 1:
 		get_tree().call_group("light", "turn_on")
 		queue_free()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		print("guard!!")
+		pass

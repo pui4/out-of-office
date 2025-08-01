@@ -6,6 +6,7 @@ extends Node3D
 @onready var down_light : SpotLight3D = $"SpotLight3D"
 @onready var up_light : SpotLight3D = $"SpotLight3D2"
 @onready var anim : AnimationPlayer = $"AnimationPlayer"
+@onready var mesh = $AssetsLight
 
 var target_light_energy : float
 
@@ -30,6 +31,7 @@ func stop_flicker() -> void:
 func turn_off() -> void:
 	up_light.light_energy = 0
 	down_light.light_energy = 0
+	mesh.material_override.emission_enabled = false
 
 func turn_on() -> void:
 	await get_tree().create_timer(randf_range(0.1, 0.3)).timeout
