@@ -4,7 +4,7 @@ extends Node
 @export var player : CharacterBody3D
 
 @export var time : Timer
-@export var base_time : float = 10
+@export var base_time : float = 120
 
 @export var room_has_real_door : bool
 
@@ -50,6 +50,7 @@ func start_run() -> void:
 	time.start()
 	run_start.emit()
 	
+	music.loop = true
 	audio_node.stream = music
 	audio_node.play()
 
