@@ -80,3 +80,7 @@ time_delay = 0.1
 metadata/_custom_type_script = "uid://saasv77rp4mn"
 
 [node name="UI" parent="." instance=ExtResource("8_uovkd")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8943, 0)
+light_energy = 0.1
