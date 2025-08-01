@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cya85jk8y7l61"]
 
+[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_4nhy7"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_r135l"]
 [ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="3_3g50h"]
-[ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="4_mitn1"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="5_yeuas"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_77otj"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="7_1xon0"]
@@ -19,6 +19,7 @@ _data = {
 point_count = 3
 
 [node name="ToTheLeft" type="Node3D"]
+script = ExtResource("1_4nhy7")
 
 [node name="DoorEnd" parent="." instance=ExtResource("1_r135l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
@@ -28,9 +29,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0,
 
 [node name="DoorEnd2" parent="." instance=ExtResource("1_r135l")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -8)
-
-[node name="Door" parent="." instance=ExtResource("4_mitn1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.9857, 0, -12.1065)
 
 [node name="RandomTaskSpawner" parent="." instance=ExtResource("5_yeuas")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 22, 0, 2)
@@ -67,3 +65,6 @@ mesh = ExtResource("10_khtkj")
 [node name="AssetsPaperArrow2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 0.32603, -1.42512e-08, -0.945359, 0.945359, -4.1323e-08, 0.32603, 23.8641, 3.10232, 0.520174)
 mesh = ExtResource("10_khtkj")
+
+[node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 20, 0, -12)

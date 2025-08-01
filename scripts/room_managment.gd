@@ -6,6 +6,7 @@ extends Node3D
 func _ready() -> void:
 	var markers : Array[Node] = get_tree().get_nodes_in_group("door_marker")
 	
+	#var target_real : int = randi_range(0, len(markers) - 1)
 	var target_real : int = randi_range(0, len(markers) - 1)
 	var rdoor_inst : Node3D = real_door.instantiate()
 	add_child(rdoor_inst)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bidxxgoh1kgci"]
+[gd_scene load_steps=13 format=3 uid="uid://bidxxgoh1kgci"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_0rvry"]
+[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_fv3w2"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="2_2kyca"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="3_n250l"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="4_roq83"]
@@ -19,6 +20,7 @@ _data = {
 point_count = 3
 
 [node name="DeadEnds" type="Node3D"]
+script = ExtResource("1_fv3w2")
 
 [node name="DoorEnd" parent="." instance=ExtResource("1_0rvry")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
@@ -40,9 +42,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28, 0,
 
 [node name="TSplit3" parent="." instance=ExtResource("3_n250l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 28, 0, 0)
-
-[node name="Straight2" parent="." instance=ExtResource("4_roq83")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
 
 [node name="DeadEnd3" parent="." instance=ExtResource("2_2kyca")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 44, 0, 0)
@@ -89,3 +88,15 @@ mesh = ExtResource("9_krf07")
 [node name="AssetsCorkboard" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.7, 3, 0)
 mesh = ExtResource("10_0rw54")
+
+[node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 28, 0, -20)
+
+[node name="Marker3D2" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 36, 0, 12)
+
+[node name="TSplit4" parent="." instance=ExtResource("3_n250l")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36, 0, 0)
+
+[node name="DoorEnd3" parent="." instance=ExtResource("1_0rvry")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 36, 0, 8)

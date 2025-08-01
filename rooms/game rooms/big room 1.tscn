@@ -104,7 +104,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22, 0,
 [node name="RandomTaskSpawner3" parent="." instance=ExtResource("9_xe5cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 18)
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
 curve = SubResource("Curve3D_xe5cc")
 
 [node name="AssetsCorkboard" type="MeshInstance3D" parent="."]

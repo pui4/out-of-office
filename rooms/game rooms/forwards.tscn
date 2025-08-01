@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://d2wrvh1cf2r80"]
 
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_3gv8q"]
+[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_n7upl"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="2_i5sfh"]
-[ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_i5sfh"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="4_1oe8a"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="5_qterg"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="6_v6hn0"]
@@ -20,6 +20,7 @@ _data = {
 point_count = 2
 
 [node name="Room1" type="Node3D"]
+script = ExtResource("1_n7upl")
 
 [node name="DoorEnd" parent="." instance=ExtResource("1_3gv8q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
@@ -29,9 +30,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
 [node name="DoorEnd2" parent="." instance=ExtResource("1_3gv8q")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28, 0, 0)
-
-[node name="Door" parent="." instance=ExtResource("3_i5sfh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1437, 0, 0)
 
 [node name="RandomTaskSpawner" parent="." instance=ExtResource("4_1oe8a")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 22.0624, 2.38419e-07, 2.92801)
@@ -72,3 +70,6 @@ mesh = ExtResource("10_6gfhh")
 [node name="AssetsPaperArrow" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 6.16922e-16, 0.0871559, -3.8097e-09, -0.996195, 0.996195, -4.35451e-08, 0.0871559, 23.7, 3.1, -6.7356)
 mesh = ExtResource("11_o0ytw")
+
+[node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(1, 6.97481e-05, 0.000154017, -6.97481e-05, 1, 9.09542e-05, -0.000154017, -9.09542e-05, 1, 32, 0, 0)

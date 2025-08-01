@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://w8shnfvaoey5"]
+[gd_scene load_steps=14 format=3 uid="uid://w8shnfvaoey5"]
 
 [ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_4ynd6"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="2_dyyyt"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="8_eik5v"]
 [ext_resource type="ArrayMesh" uid="uid://6gffv323ures" path="res://meshes/assets_corkboard.res" id="9_ehshl"]
 [ext_resource type="ArrayMesh" uid="uid://b8bc8xyw38ggs" path="res://meshes/assets_paper blank.res" id="10_g2hk6"]
+[ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="11_g2hk6"]
+[ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="12_jn2h7"]
 
 [sub_resource type="Curve3D" id="Curve3D_4ynd6"]
 _data = {
@@ -42,9 +44,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 16)
 [node name="DeadEnd" parent="." instance=ExtResource("5_jn2h7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 24)
 
-[node name="TSplit2" parent="." instance=ExtResource("3_ehshl")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, 0, 16)
-
 [node name="BigTable" parent="." instance=ExtResource("6_mbhfa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2)
 
@@ -67,12 +66,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 2)
 
 [node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 16)
 
 [node name="Marker3D2" type="Marker3D" parent="." groups=["door_marker"]]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -8, 0, 16)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 0, 16)
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="Path3D" type="Path3D" parent="." groups=["guard_path"]]
 curve = SubResource("Curve3D_4ynd6")
 
 [node name="AssetsCorkboard" type="MeshInstance3D" parent="."]
@@ -82,3 +84,15 @@ mesh = ExtResource("9_ehshl")
 [node name="AssetsPaperBlank" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 0.981246, -4.28916e-08, 0.192762, -0.192762, 8.42588e-09, 0.981246, 15.9, 3, 9.3)
 mesh = ExtResource("10_g2hk6")
+
+[node name="Open" parent="." instance=ExtResource("11_g2hk6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="DoorEnd4" parent="." instance=ExtResource("2_dyyyt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0, 16)
+
+[node name="RandomTaskSpawner" parent="." instance=ExtResource("12_jn2h7")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 14, -4.76837e-07, 9)
+
+[node name="RandomTaskSpawner2" parent="." instance=ExtResource("12_jn2h7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 21)

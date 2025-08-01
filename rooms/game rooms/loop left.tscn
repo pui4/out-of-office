@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://ctshvcnrstxi7"]
 
+[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_2hwou"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_ijqcc"]
 [ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="2_10hju"]
-[ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_b0bht"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="5_14gtu"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_l6avw"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_56xc7"]
@@ -20,6 +20,7 @@ _data = {
 point_count = 4
 
 [node name="LoopLeft" type="Node3D"]
+script = ExtResource("1_2hwou")
 
 [node name="DoorEnd" parent="." instance=ExtResource("1_ijqcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
@@ -32,9 +33,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 0,
 
 [node name="DoorEnd2" parent="." instance=ExtResource("1_ijqcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -16)
-
-[node name="Door" parent="." instance=ExtResource("3_b0bht")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -16)
 
 [node name="RandomTaskSpawner" parent="." instance=ExtResource("5_14gtu")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 14, 0, 2)
@@ -70,3 +68,6 @@ mesh = ExtResource("10_2hwou")
 [node name="AssetsPaperArrow" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 0.258819, -1.13133e-08, -0.965926, 0.965926, -4.2222e-08, 0.258819, 15.9, 3.14243, -16.3808)
 mesh = ExtResource("11_w72f4")
+
+[node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -16)

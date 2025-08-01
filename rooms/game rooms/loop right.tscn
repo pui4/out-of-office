@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://dgomtdhemcpwo"]
 
+[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_3vu8e"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_o0ek7"]
 [ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="2_18b2o"]
-[ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="3_18b2o"]
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="4_14hij"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="5_td346"]
 [ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="6_4d51b"]
@@ -21,6 +21,7 @@ _data = {
 point_count = 4
 
 [node name="TakeItBack" type="Node3D"]
+script = ExtResource("1_3vu8e")
 
 [node name="DoorEnd" parent="." instance=ExtResource("1_o0ek7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
@@ -30,9 +31,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, 0,
 
 [node name="DoorEnd2" parent="." instance=ExtResource("1_o0ek7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
-
-[node name="Door" parent="." instance=ExtResource("3_18b2o")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 16)
 
 [node name="Straight" parent="." instance=ExtResource("4_14hij")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, 8)
@@ -71,3 +69,6 @@ mesh = ExtResource("11_3vu8e")
 [node name="AssetsPaperArrow" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 0.260521, -1.13877e-08, -0.965468, 0.965468, -4.2202e-08, 0.260521, 15.9, 3, 0.5)
 mesh = ExtResource("12_g0i04")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 16)

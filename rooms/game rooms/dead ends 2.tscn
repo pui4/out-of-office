@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvbqgmcamaqj"]
+[gd_scene load_steps=12 format=3 uid="uid://bvbqgmcamaqj"]
 
+[ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_mxq4o"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_o2k5g"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="2_pxf1c"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="3_8r5wp"]
@@ -18,6 +19,7 @@ _data = {
 point_count = 3
 
 [node name="DeadEnds" type="Node3D"]
+script = ExtResource("1_mxq4o")
 
 [node name="DoorEnd" parent="." instance=ExtResource("1_o2k5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
