@@ -8,6 +8,7 @@ var setup : bool = true
 
 func _ready() -> void:
 	$AudioStreamPlayer3D.play(randf_range(0,1))
+	Lib.enter_new_room.connect(_on_new_room)
 
 func _process(delta: float) -> void:
 	if is_instance_valid(Lib.current_room):
@@ -34,3 +35,6 @@ func _process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		Lib.kill("guard")
+
+func _on_new_room(name : String):
+	queue_free()
