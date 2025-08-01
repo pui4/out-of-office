@@ -28,6 +28,8 @@ func _on_body_entered(body: Node3D) -> void:
 		Lib.current_room = room_inst
 		Lib.room_has_real_door = false
 		
+		Lib.enter_new_room.emit(rooms[target_room])
+		
 		# Spawn and launch door
 		var door_inst : RigidBody3D = phys_door.instantiate()
 		Lib.current_room.add_child(door_inst)

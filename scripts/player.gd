@@ -25,6 +25,8 @@ extends CharacterBody3D
 
 @onready var raycast : RayCast3D = $"SubViewportContainer/SubViewport/head/Camera3D/RayCast3D"
 
+var flickering : bool #TODO: Remove this
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Lib.player = self
@@ -89,4 +91,9 @@ func _physics_process(delta: float) -> void:
 			Lib.task_interaction.emit(hit)
 			
 	if Input.is_action_just_pressed("testing"):
-		get_tree().call_group("light", "flicker")
+		if flickering:
+			get_tree().call_group("light", "stop_flicker")
+			flickering = false
+		else:
+			get_tree().call_group("light", "flicker")
+			flickering = true
