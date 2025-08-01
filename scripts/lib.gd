@@ -31,6 +31,7 @@ var died_to : String
 var death_inst : Control
 
 @onready var music : AudioStreamMP3 = preload("res://sfx/music.mp3")
+@onready var base_ambiance : AudioStreamMP3 = preload("res://sfx/printer/Analog Machinery 001.mp3")
 var audio_node : AudioStreamPlayer
 
 @onready var player_scene : PackedScene = preload("res://assets/player.tscn")
@@ -48,6 +49,9 @@ func _ready() -> void:
 	
 	audio_node = AudioStreamPlayer.new()
 	add_child(audio_node)
+	base_ambiance.loop = true
+	audio_node.stream = base_ambiance
+	audio_node.play()
 
 func start_run() -> void:
 	time.start()

@@ -147,7 +147,7 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 187.0
+offset_bottom = 413.0
 grow_horizontal = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2"]
@@ -161,7 +161,7 @@ text = "[wave][center]YOU ARE FIRED"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="VBoxContainer2"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 183.69)
+custom_minimum_size = Vector2(-6.97, 183.69)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_lf77f")
 theme_override_font_sizes/normal_font_size = 61
