@@ -14,6 +14,7 @@ signal task_interaction
 signal time_increased
 signal enter_new_room
 signal run_start
+signal pause
 
 @onready var guard : PackedScene = preload("res://billboard test.tscn")
 
