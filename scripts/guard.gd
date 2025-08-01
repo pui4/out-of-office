@@ -6,6 +6,9 @@ extends PathFollow3D
 
 var setup : bool = true
 
+func _ready() -> void:
+	$AudioStreamPlayer3D.play(randf_range(0,1))
+
 func _process(delta: float) -> void:
 	if is_instance_valid(Lib.current_room):
 		if global_position.distance_to(Lib.current_room.global_position) <= 10 and setup:

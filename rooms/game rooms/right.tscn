@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_a1dvc"]
 [ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="7_vu5ey"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="8_3t866"]
-[ext_resource type="ArrayMesh" uid="uid://pkc47k7j0ybj" path="res://meshes/assets_corkboard.res" id="9_3t866"]
-[ext_resource type="ArrayMesh" uid="uid://bqhbm2cl785g8" path="res://meshes/assets_paper blank.res" id="10_5g7oe"]
+[ext_resource type="ArrayMesh" uid="uid://6gffv323ures" path="res://meshes/assets_corkboard.res" id="9_3t866"]
+[ext_resource type="ArrayMesh" uid="uid://b8bc8xyw38ggs" path="res://meshes/assets_paper blank.res" id="10_5g7oe"]
 
 [sub_resource type="Curve3D" id="Curve3D_mq6he"]
 _data = {
