@@ -36,6 +36,8 @@ func _ready() -> void:
 	arm_anim.speed_scale = 1.5
 	
 	view.stretch_shrink = Lib.get_display_dense()
+	
+	get_tree().root.size_changed.connect(_on_resize)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -101,3 +103,6 @@ func _physics_process(delta: float) -> void:
 		#else:
 			#get_tree().call_group("light", "flicker")
 			#flickering = true
+
+func _on_resize() -> void:
+	view.stretch_shrink = Lib.get_display_dense()

@@ -9,6 +9,8 @@ extends Area3D
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		subview.stretch_shrink = Lib.get_display_dense()
+		get_tree().root.size_changed.connect(_on_resize)
+		
 		Lib.player.queue_free()
 		subview.show()
 		anim.play("kill")
@@ -19,3 +21,6 @@ func _on_body_entered(body: Node3D) -> void:
 		
 func _process(delta: float) -> void:
 	actual_cam.global_transform = target_cam.global_transform
+
+func _on_resize() -> void:
+	subview.stretch_shrink = Lib.get_display_dense()
