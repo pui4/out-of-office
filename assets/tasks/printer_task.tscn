@@ -61,7 +61,6 @@ script = ExtResource("1_45sv2")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamMP3_6u3su")
 volume_db = -12.308
-autoplay = true
 
 [node name="RandomSound3D" type="AudioStreamPlayer3D" parent="."]
 script = ExtResource("2_r8ymb")

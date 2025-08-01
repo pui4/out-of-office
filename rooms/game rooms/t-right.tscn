@@ -41,6 +41,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18, 0,
 
 [node name="RandomTaskSpawner2" parent="." instance=ExtResource("6_a8tkk")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22, 0, -6)
+tasks = Array[String](["printer_task"])
 
 [node name="Desk" parent="." instance=ExtResource("7_df1dh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -2)

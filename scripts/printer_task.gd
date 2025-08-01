@@ -9,7 +9,9 @@ extends StaticBody3D
 var done : bool
 
 func _ready() -> void:
+	
 	Lib.task_interaction.connect(_on_interaction)
+	error_sfx.play(randf())
 
 func _on_interaction(hit : Node3D) -> void:
 	if hit == self and not done:
