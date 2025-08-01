@@ -9,8 +9,8 @@ extends StaticBody3D
 var done : bool
 
 func _ready() -> void:
-	#var target_tex : int = randi_range(0, len(imgs) - 1)
-	var target_tex : int = 3
+	var target_tex : int = randi_range(0, len(imgs) - 1)
+	#var target_tex : int = 3
 	var tex : Texture2D = load("res://texture/whiteboard_imgs/%s.png" % imgs[target_tex])
 	sprite.texture = tex
 	
