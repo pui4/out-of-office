@@ -1,0 +1,262 @@
+[gd_scene load_steps=17 format=3 uid="uid://djja0q817eawl"]
+
+[ext_resource type="Shader" uid="uid://cb3mms08tbl4b" path="res://custom_shaders/noise_bg.gdshader" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://da7byrkda20gc" path="res://scripts/main_menu.gd" id="1_j5v2v"]
+[ext_resource type="FontFile" uid="uid://dt7pnq7vqclll" path="res://Jersey10-Regular.ttf" id="2_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="3_0k4wn"]
+[ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="4_j5v2v"]
+[ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="5_iotk1"]
+[ext_resource type="PackedScene" uid="uid://bdf3315bjmc3f" path="res://modules/T split.tscn" id="6_w44g7"]
+[ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="7_cm266"]
+[ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="8_g8g3n"]
+[ext_resource type="Texture2D" uid="uid://cw73a3kfxhe83" path="res://texture/tut.png" id="9_8u0te"]
+[ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="10_oiatc"]
+[ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="11_mg3m2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7vrkn"]
+shader = ExtResource("1_06t4h")
+shader_parameter/scroll_speed = Vector2(3, 5)
+shader_parameter/static_intensity = 0.25
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/tex_scale = 8.45
+shader_parameter/pixelation = 32.0
+shader_parameter/alpha = 0.5
+
+[sub_resource type="Animation" id="Animation_0k4wn"]
+resource_name = "turn"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.153765, -1.69363, 0.00281594), Vector3(-0.153765, -2.78068, 0.00281594), Vector3(-0.153765, -1.69363, 0.00281594)]
+}
+
+[sub_resource type="Animation" id="Animation_j5v2v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.153765, -1.69363, 0.00281594)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iotk1"]
+_data = {
+&"RESET": SubResource("Animation_j5v2v"),
+&"turn": SubResource("Animation_0k4wn")
+}
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_j5v2v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_7vrkn")
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 411.0
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 136.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("2_7vrkn")
+theme_override_font_sizes/normal_font_size = 126
+bbcode_enabled = true
+text = "[center][wave]TITLE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 85
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 85
+text = "SETTINGS"
+
+[node name="staticprops" type="Node3D" parent="."]
+
+[node name="Open" parent="staticprops" instance=ExtResource("3_0k4wn")]
+
+[node name="Open2" parent="staticprops" instance=ExtResource("3_0k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Open3" parent="staticprops" instance=ExtResource("3_0k4wn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, 0)
+
+[node name="Straight" parent="staticprops" instance=ExtResource("4_j5v2v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -16)
+
+[node name="DeadEnd" parent="staticprops" instance=ExtResource("5_iotk1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -24)
+
+[node name="TSplit" parent="staticprops" instance=ExtResource("6_w44g7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, -8)
+
+[node name="Straight2" parent="staticprops" instance=ExtResource("4_j5v2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -8)
+
+[node name="DeadEnd2" parent="staticprops" instance=ExtResource("5_iotk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -8)
+
+[node name="TSplit2" parent="staticprops" instance=ExtResource("6_w44g7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Turn" parent="staticprops" instance=ExtResource("7_cm266")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="TSplit3" parent="staticprops" instance=ExtResource("6_w44g7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 8)
+
+[node name="TSplit4" parent="staticprops" instance=ExtResource("6_w44g7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 8)
+
+[node name="Turn2" parent="staticprops" instance=ExtResource("7_cm266")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16, 0, 8)
+
+[node name="Straight3" parent="staticprops" instance=ExtResource("4_j5v2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="TSplit5" parent="staticprops" instance=ExtResource("6_w44g7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -8)
+
+[node name="Turn3" parent="staticprops" instance=ExtResource("7_cm266")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 16, 0, -8)
+
+[node name="Open4" parent="staticprops" instance=ExtResource("3_0k4wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="DeadEnd3" parent="staticprops" instance=ExtResource("5_iotk1")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 32, 0, 0)
+
+[node name="Desk" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 0.0284729)
+
+[node name="Desk6" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 8.12847)
+
+[node name="Desk7" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 0.128473)
+
+[node name="Desk8" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 6.12847)
+
+[node name="Desk9" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 4.12847)
+
+[node name="Desk10" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.17494, -4.76837e-07, 2.12847)
+
+[node name="Desk2" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 8.02847)
+
+[node name="Desk3" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 2.02847)
+
+[node name="Sprite3D" type="Sprite3D" parent="staticprops/Desk3"]
+transform = Transform3D(-1.11914e-08, 0, -0.279963, 0, 0.256029, 0, 0.256029, 0, -1.22376e-08, 0.27678, 1.58869, -0.261014)
+texture_filter = 0
+texture = ExtResource("9_8u0te")
+
+[node name="Desk4" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 4.02847)
+
+[node name="Desk5" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 6.02847)
+
+[node name="Desk21" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Desk22" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 8.1)
+
+[node name="Desk23" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 0.0999999)
+
+[node name="Desk24" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 6.1)
+
+[node name="Desk25" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 4.1)
+
+[node name="Desk26" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.8, 0, 2.1)
+
+[node name="Desk27" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="Desk28" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 2)
+
+[node name="Desk29" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
+
+[node name="Desk30" parent="staticprops" instance=ExtResource("8_g8g3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 6)
+
+[node name="Pillar" parent="staticprops" instance=ExtResource("10_oiatc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+
+[node name="Pillar2" parent="staticprops" instance=ExtResource("10_oiatc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3)
+
+[node name="Pillar3" parent="staticprops" instance=ExtResource("10_oiatc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -7)
+
+[node name="BigTable" parent="staticprops" instance=ExtResource("11_mg3m2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 6)
+
+[node name="BigTable2" parent="staticprops" instance=ExtResource("11_mg3m2")]
+transform = Transform3D(0.898718, 0, -0.438528, 0, 1, 0, 0.438528, 0, 0.898718, 11, 0, 2)
+
+[node name="Camera3D" type="Camera3D" parent="staticprops"]
+transform = Transform3D(-0.122099, 0.15235, -0.980755, 0.00278271, 0.988198, 0.15316, 0.992514, 0.0159715, -0.121082, -5.48566, 4.47752, -8.23445)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="staticprops"]
+libraries = {
+&"": SubResource("AnimationLibrary_iotk1")
+}
+autoplay = "turn"
+speed_scale = 0.5
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
