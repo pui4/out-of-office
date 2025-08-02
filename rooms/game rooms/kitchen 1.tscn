@@ -11,7 +11,6 @@
 [ext_resource type="ArrayMesh" uid="uid://c7v46um4a2m4n" path="res://meshes/assets_pot plant small.res" id="8_111s3"]
 [ext_resource type="ArrayMesh" uid="uid://dx6vq63sb1xy6" path="res://meshes/assets_cup.res" id="9_111s3"]
 [ext_resource type="ArrayMesh" uid="uid://b67nfk6dwuqeq" path="res://meshes/assets_toaster.res" id="10_jqelr"]
-[ext_resource type="ArrayMesh" uid="uid://csh0vs5opq81w" path="res://meshes/assets_rug.res" id="11_803oa"]
 [ext_resource type="PackedScene" uid="uid://dv3h84quwsh38" path="res://modules/props/short table.tscn" id="12_f4k7t"]
 [ext_resource type="PackedScene" uid="uid://bjehxteniyb2b" path="res://modules/props/water cooler.tscn" id="13_n0x20"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="14_wqroh"]
@@ -19,6 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://bwpy00ht5sor" path="res://modules/props/couch.tscn" id="16_gqpn1"]
 [ext_resource type="ArrayMesh" uid="uid://l2u5mxuw7gny" path="res://meshes/assets_clock.res" id="17_0uekr"]
 [ext_resource type="PackedScene" uid="uid://d0pwmj4ojxd1w" path="res://modules/dead end.tscn" id="18_6kjk3"]
+
+[sub_resource type="Curve3D" id="Curve3D_6kjk3"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, -8, 0, 0, 0, 0, 0, 0, 20, 0, -8, 0, 0, 0, 0, 0, 0, 20, 0, -16, 0, 0, 0, 0, 0, 0, 20, 0, 8, 0, 0, 0, 0, 0, 0, 32, 0, 8),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
 
 [node name="Kitchen1" type="Node3D"]
 script = ExtResource("1_82ihd")
@@ -73,10 +79,6 @@ mesh = ExtResource("9_111s3")
 transform = Transform3D(-1.28949e-08, 0, -0.295, 0, 0.295, 0, 0.295, 0, -1.28949e-08, 23.3, 2, 1.7)
 mesh = ExtResource("10_jqelr")
 
-[node name="AssetsRug" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.40902, 0, 0, 0, 1, 0, 0, 0, 1.40902, 13, 0.0493009, -7)
-mesh = ExtResource("11_803oa")
-
 [node name="ShortTable" parent="." instance=ExtResource("12_f4k7t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -6)
 
@@ -87,17 +89,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
 transform = Transform3D(-0.999391, 0, -0.0348994, 0, 1, 0, 0.0348994, 0, -0.999391, 14.2, -0.00928707, -9.6)
 
 [node name="RandomTaskSpawner2" parent="." instance=ExtResource("14_wqroh")]
-transform = Transform3D(-0.672987, 0, 0.739655, 0, 1, 0, -0.739655, 0, -0.672987, 19.2, 0.00910549, 6.8)
+transform = Transform3D(0.888634, 0, 0.458619, 0, 1, 0, -0.458619, 0, 0.888634, 19.2, 0.00910549, 6.8)
 
 [node name="Pillar" parent="." instance=ExtResource("15_qsgiy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 1)
 
 [node name="Couch" parent="." instance=ExtResource("16_gqpn1")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 10.4)
-
-[node name="AssetsRug2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8747, 0.0673797, 8.77641)
-mesh = ExtResource("11_803oa")
 
 [node name="AssetsClock" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 12.6, 3, 1)
@@ -123,3 +121,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0,
 
 [node name="Turn2" parent="." instance=ExtResource("2_16p2k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 8)
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_6kjk3")

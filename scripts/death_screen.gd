@@ -8,11 +8,11 @@ func _ready() -> void:
 	# Setting hint text
 	match Lib.died_to:
 		"fake_door":
-			hint_txt.text = "[center]You entered the managers office. Look out for them. They are different."
+			hint_txt.text = "[center]You entered the managers office. Look out for them. the line in the door is crooked"
 		"guard":
-			hint_txt.text = "[center]You were grabbed by the guard. Hide next time? In the shadows??"
+			hint_txt.text = "[center]You were grabbed by the guard. Hide in dark corners to avoid him, the lights will flicker when he is going to arrive."
 		"timeout":
-			hint_txt.text = "[center]Well done you tried. Maybe try doing more tasks?"
+			hint_txt.text = "[center]Well done you tried."
 	
 	score_txt.text = "[center]SCORE: %s" % Lib.door_count
 	anim.play("start")

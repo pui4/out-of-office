@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bncp50n2b623n"]
+[gd_scene load_steps=15 format=3 uid="uid://bncp50n2b623n"]
 
 [ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_4ynd6"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="2_dyyyt"]
@@ -12,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b8bc8xyw38ggs" path="res://meshes/assets_paper blank.res" id="10_g2hk6"]
 [ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="11_g2hk6"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="12_jn2h7"]
+[ext_resource type="ArrayMesh" uid="uid://djqf1tpl78arv" path="res://meshes/assets_pot plant large.res" id="13_mbhfa"]
 
 [sub_resource type="Curve3D" id="Curve3D_4ynd6"]
 _data = {
@@ -96,3 +97,7 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="RandomTaskSpawner2" parent="." instance=ExtResource("12_jn2h7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 18.4)
+
+[node name="AssetsPotPlantLarge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.1, 3)
+mesh = ExtResource("13_mbhfa")
