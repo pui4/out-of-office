@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://32od8dyn7l8y"]
+[gd_scene load_steps=14 format=3 uid="uid://32od8dyn7l8y"]
 
 [ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_6pkyo"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_hr2wi"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="8_tn6ut"]
 [ext_resource type="ArrayMesh" uid="uid://6gffv323ures" path="res://meshes/assets_corkboard.res" id="9_6pkyo"]
 [ext_resource type="ArrayMesh" uid="uid://3ir6c3x2f35o" path="res://meshes/assets_paper arrow.res" id="10_eoley"]
+[ext_resource type="PackedScene" uid="uid://bjehxteniyb2b" path="res://modules/props/water cooler.tscn" id="11_eoley"]
+[ext_resource type="ArrayMesh" uid="uid://bx16wyd4xl7sc" path="res://meshes/assets_rug.res" id="12_caapc"]
 
 [sub_resource type="Curve3D" id="Curve3D_df1dh"]
 _data = {
@@ -72,3 +74,10 @@ mesh = ExtResource("10_eoley")
 
 [node name="Marker3D" type="Marker3D" parent="." groups=["door_marker"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, 12)
+
+[node name="WaterCooler" parent="." instance=ExtResource("11_eoley")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 22.7, 0, 10.7)
+
+[node name="AssetsRug" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.0499492, -3)
+mesh = ExtResource("12_caapc")

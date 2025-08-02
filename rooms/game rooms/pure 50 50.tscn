@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://hxckseh5pbbf"]
+[gd_scene load_steps=15 format=3 uid="uid://hxckseh5pbbf"]
 
 [ext_resource type="Script" uid="uid://bpgt4ippbfin2" path="res://scripts/room_managment.gd" id="1_316if"]
 [ext_resource type="PackedScene" uid="uid://dbv7xdy8lndo4" path="res://modules/door end.tscn" id="1_lw0wg"]
@@ -12,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://6gffv323ures" path="res://meshes/assets_corkboard.res" id="11_ep7lb"]
 [ext_resource type="ArrayMesh" uid="uid://c8d6p8q0hroxn" path="res://meshes/assets_paper warning.res" id="12_s1i3c"]
 [ext_resource type="ArrayMesh" uid="uid://3ir6c3x2f35o" path="res://meshes/assets_paper arrow.res" id="13_8aiec"]
+[ext_resource type="PackedScene" uid="uid://bjehxteniyb2b" path="res://modules/props/water cooler.tscn" id="13_s1i3c"]
 
 [sub_resource type="Curve3D" id="Curve3D_s1i3c"]
 _data = {
@@ -91,3 +92,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 0, -2)
 
 [node name="TSplit3" parent="." instance=ExtResource("3_4oeot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -8)
+
+[node name="WaterCooler" parent="." instance=ExtResource("13_s1i3c")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 20, 0, -8)

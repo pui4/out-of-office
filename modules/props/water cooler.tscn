@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjehxteniyb2b"]
+
+[ext_resource type="ArrayMesh" uid="uid://b32lbmdl72llv" path="res://meshes/assets_water cooler.res" id="1_qpn1m"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qpn1m"]
+height = 4.4
+radius = 1.0
+
+[node name="WaterCooler" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="AssetsWaterCooler" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_qpn1m")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+shape = SubResource("CylinderShape3D_qpn1m")

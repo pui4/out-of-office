@@ -1,6 +1,6 @@
 extends Area3D
 
-var rooms : Array[String] = ["big room 1", "big room 2", "dead ends", "dead ends 2", "fake room 3", "fake room 4", "fake T", "fake_room_1", "forwards", "left", "loop left", "loop right", "pure 50 50"]
+var rooms : Array[String] = ["kitchen 1","bathroom 1", "big room 1", "big room 2", "dead ends", "dead ends 2", "fake room 3", "fake room 4", "fake T", "fake_room_1", "forwards", "left", "loop left", "loop right", "pure 50 50"]
 #var rooms : Array[String] = ["fake_room_2"]
 
 
