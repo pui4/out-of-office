@@ -7,15 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://c6na65qbosgg2" path="res://modules/straight.tscn" id="5_du28n"]
 [ext_resource type="PackedScene" uid="uid://pwxa7xnqc2c5" path="res://modules/turn.tscn" id="6_otudm"]
 [ext_resource type="PackedScene" uid="uid://btaojifcrkhqa" path="res://modules/props/toilet.tscn" id="7_otudm"]
-[ext_resource type="ArrayMesh" uid="uid://d0b3jwcws8dcj" path="res://meshes/assets_sink.res" id="8_dmypo"]
+[ext_resource type="ArrayMesh" uid="uid://crptfdsqmpfdw" path="res://meshes/assets_sink.res" id="8_dmypo"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="9_gbj3e"]
 [ext_resource type="PackedScene" uid="uid://dv3h84quwsh38" path="res://modules/props/short table.tscn" id="10_wgg62"]
-[ext_resource type="ArrayMesh" uid="uid://bx16wyd4xl7sc" path="res://meshes/assets_rug.res" id="11_bq44o"]
+[ext_resource type="ArrayMesh" uid="uid://csh0vs5opq81w" path="res://meshes/assets_rug.res" id="11_bq44o"]
 [ext_resource type="ArrayMesh" uid="uid://l2u5mxuw7gny" path="res://meshes/assets_clock.res" id="12_5kbb2"]
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="13_kqom6"]
 [ext_resource type="PackedScene" uid="uid://m41xpalsgbit" path="res://assets/random_task_spawner.tscn" id="14_k6vww"]
 [ext_resource type="PackedScene" uid="uid://bjehxteniyb2b" path="res://modules/props/water cooler.tscn" id="15_cgyk6"]
-[ext_resource type="ArrayMesh" uid="uid://dfyfrsmlmeg85" path="res://meshes/assets_pot plant small.res" id="16_4w2tr"]
+[ext_resource type="ArrayMesh" uid="uid://c7v46um4a2m4n" path="res://meshes/assets_pot plant small.res" id="16_4w2tr"]
 
 [sub_resource type="Curve3D" id="Curve3D_k6vww"]
 _data = {

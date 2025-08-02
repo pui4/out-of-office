@@ -11,7 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://6gffv323ures" path="res://meshes/assets_corkboard.res" id="9_6pkyo"]
 [ext_resource type="ArrayMesh" uid="uid://3ir6c3x2f35o" path="res://meshes/assets_paper arrow.res" id="10_eoley"]
 [ext_resource type="PackedScene" uid="uid://bjehxteniyb2b" path="res://modules/props/water cooler.tscn" id="11_eoley"]
-[ext_resource type="ArrayMesh" uid="uid://bx16wyd4xl7sc" path="res://meshes/assets_rug.res" id="12_caapc"]
+[ext_resource type="ArrayMesh" uid="uid://csh0vs5opq81w" path="res://meshes/assets_rug.res" id="12_caapc"]
 
 [sub_resource type="Curve3D" id="Curve3D_df1dh"]
 _data = {
