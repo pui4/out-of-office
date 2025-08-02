@@ -10,8 +10,6 @@ extends CharacterBody3D
 @export var max_lean_deg : float = 7
 @export var lean_div : float = -4
 
-@export var lookspeed : float = 0.1
-
 @onready var head : Node3D = $"SubViewportContainer/SubViewport/head"
 @onready var camera : Camera3D = $"SubViewportContainer/SubViewport/head/Camera3D"
 @onready var arm_cam : Camera3D = $"SubViewportContainer/SubViewport2/Camera3D2"
@@ -41,8 +39,8 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-			rotate_y(deg_to_rad(-event.relative.x * lookspeed))
-			target_head.rotate_x(deg_to_rad(-event.relative.y * lookspeed))
+			rotate_y(deg_to_rad(-event.relative.x * Lib.player_sens))
+			target_head.rotate_x(deg_to_rad(-event.relative.y * Lib.player_sens))
 			target_head.rotation.x = clamp(target_head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 	#elif event is InputEventKey:
 		#if event.keycode == KEY_ESCAPE:
