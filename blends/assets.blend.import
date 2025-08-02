@@ -40,6 +40,30 @@ _subresources={
 }
 },
 "meshes": {
+"assets_Cylinder_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_Cylinder_002.res"
+},
+"assets_Cylinder_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_Cylinder_004.res"
+},
+"assets_clock": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_clock.res"
+},
 "assets_coffee": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -56,6 +80,14 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_corkboard.res"
 },
+"assets_couch": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_couch.res"
+},
 "assets_cubicle": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -63,6 +95,22 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_cubicle.res"
+},
+"assets_cup": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_cup.res"
+},
+"assets_cupboard": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_cupboard.res"
 },
 "assets_dead end": {
 "generate/lightmap_uv": 0,
@@ -88,14 +136,6 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_door end.res"
 },
-"assets_exit sign": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://meshes/assets_exit sign.res"
-},
 "assets_fake door": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -103,6 +143,14 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_fake door.res"
+},
+"assets_fridge": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_fridge.res"
 },
 "assets_large table": {
 "generate/lightmap_uv": 0,
@@ -160,6 +208,22 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_pillar.res"
 },
+"assets_pot plant large": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_pot plant large.res"
+},
+"assets_pot plant small": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_pot plant small.res"
+},
 "assets_printer": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -167,6 +231,38 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_printer.res"
+},
+"assets_rug": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_rug.res"
+},
+"assets_short table": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_short table.res"
+},
+"assets_sink": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_sink.res"
+},
+"assets_soap": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_soap.res"
 },
 "assets_split": {
 "generate/lightmap_uv": 0,
@@ -184,6 +280,22 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_straight.res"
 },
+"assets_toaster": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_toaster.res"
+},
+"assets_toilet": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_toilet.res"
+},
 "assets_turn": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -191,6 +303,14 @@ _subresources={
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
 "save_to_file/path": "res://meshes/assets_turn.res"
+},
+"assets_water cooler": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://meshes/assets_water cooler.res"
 },
 "assets_whiteboard": {
 "generate/lightmap_uv": 0,
