@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://c335heeljoma4"]
+
+[ext_resource type="Shader" uid="uid://cb3mms08tbl4b" path="res://custom_shaders/noise_bg.gdshader" id="1_5dlh3"]
+[ext_resource type="Script" uid="uid://b0jgsonqrymr3" path="res://scripts/settings_menu.gd" id="1_y0b86"]
+[ext_resource type="Texture2D" uid="uid://b77kavgk6btl5" path="res://texture/close.png" id="2_3wajc"]
+[ext_resource type="FontFile" uid="uid://dt7pnq7vqclll" path="res://Jersey10-Regular.ttf" id="3_y0b86"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y0b86"]
+shader = ExtResource("1_5dlh3")
+shader_parameter/scroll_speed = Vector2(3, 5)
+shader_parameter/static_intensity = 0.25
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/tex_scale = 3.0
+shader_parameter/pixelation = 32.0
+shader_parameter/alpha = 1.0
+
+[node name="SettingsMenu" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_y0b86")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_y0b86")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -54.0
+offset_top = 16.0
+offset_right = -14.0
+offset_bottom = 56.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_3wajc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 14.0
+offset_right = 331.0
+offset_bottom = 96.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("3_y0b86")
+theme_override_font_sizes/normal_font_size = 66
+bbcode_enabled = true
+text = "[wave] SETTINGS:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -18.0
+offset_right = 282.0
+offset_bottom = 22.0
+grow_vertical = 2
+
+[node name="HSlider2" type="HSlider" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/HSlider2"]
+offset_left = 263.0
+offset_top = -7.0
+offset_right = 379.0
+offset_bottom = 21.0
+theme_override_fonts/normal_font = ExtResource("3_y0b86")
+theme_override_font_sizes/normal_font_size = 25
+text = "VOLUME"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="HSlider" type="HSlider" parent="ColorRect/VBoxContainer/MarginContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/MarginContainer/HSlider"]
+layout_mode = 0
+offset_left = 263.0
+offset_top = -7.0
+offset_right = 379.0
+offset_bottom = 21.0
+theme_override_fonts/normal_font = ExtResource("3_y0b86")
+theme_override_font_sizes/normal_font_size = 25
+text = "SENSITIVITY"
+
+[connection signal="pressed" from="ColorRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="value_changed" from="ColorRect/VBoxContainer/HSlider2" to="." method="_on_vol_value_changed"]
+[connection signal="value_changed" from="ColorRect/VBoxContainer/MarginContainer/HSlider" to="." method="_on_sens_value_changed"]

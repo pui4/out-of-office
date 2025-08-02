@@ -2,6 +2,7 @@ extends Node
 
 @export var current_room : Node3D
 @export var player : CharacterBody3D
+@export var player_sens : float = 0.1
 
 @export var time : Timer
 @export var base_time : float = 120
