@@ -58,7 +58,7 @@ transform = Transform3D(-3.32145e-09, 0, -0.075986, 0, 0.075986, 0, 0.075986, 0,
 [node name="player" parent="SubViewportContainer/SubViewport/head/Camera3D/arms" instance=ExtResource("2_3mip4")]
 
 [node name="RayCast3D" type="RayCast3D" parent="SubViewportContainer/SubViewport/head/Camera3D"]
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -5)
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
@@ -82,5 +82,5 @@ metadata/_custom_type_script = "uid://saasv77rp4mn"
 [node name="UI" parent="." instance=ExtResource("8_uovkd")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8943, 0)
 light_energy = 0.1
+light_cull_mask = 4294967293

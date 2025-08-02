@@ -11,6 +11,7 @@ func _on_body_entered(body: Node3D) -> void:
 		subview.stretch_shrink = Lib.get_display_dense()
 		get_tree().root.size_changed.connect(_on_resize)
 		
+		get_tree().call_group("pause", "queue_free")
 		Lib.player.queue_free()
 		subview.show()
 		anim.play("kill")

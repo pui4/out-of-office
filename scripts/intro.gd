@@ -14,6 +14,9 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	var player_inst : CharacterBody3D = Lib.player_scene.instantiate()
 	get_tree().root.add_child(player_inst)
 	player_inst.global_transform = target.global_transform
+	
+	Lib.pause_inst = Lib.pause_menu.instantiate()
+	get_tree().root.add_child(Lib.pause_inst)
 
 func _on_resize() -> void:
 	view.stretch_shrink = Lib.get_display_dense()

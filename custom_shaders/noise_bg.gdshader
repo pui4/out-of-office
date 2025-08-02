@@ -4,6 +4,7 @@ uniform float static_intensity : hint_range(0.0, 1.0, 0.05) = 0.25;
 uniform vec3 color : source_color = vec3(1.0);
 uniform float tex_scale: hint_range(0.5, 10.0, 0.01) = 3.0;
 uniform float pixelation : hint_range(1.0, 100.0, 1.0) = 32.0;
+uniform float alpha : hint_range(0.0, 1.0, 0.1) = 1;
 uniform sampler2D albedo_tex : hint_default_white;
 
 vec2 pixelate_uv(vec2 uv, float pixelation_amount) {
@@ -23,5 +24,5 @@ void fragment() {
 
 	vec3 final = mix(cnoise, cnoise, noise * 0.5);
 
-	COLOR = vec4(final.x, final.y, final.z, 255);
+	COLOR = vec4(final.x, final.y, final.z, alpha);
 }

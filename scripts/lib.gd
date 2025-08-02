@@ -37,6 +37,9 @@ var audio_node : AudioStreamPlayer
 
 @onready var player_scene : PackedScene = preload("res://assets/player.tscn")
 
+@onready var pause_menu : PackedScene = preload("res://assets/pause_menu.tscn")
+var pause_inst : CanvasLayer
+
 func _ready() -> void:
 	time = Timer.new()
 	add_child(time)
@@ -94,6 +97,8 @@ func kill(name : String):
 	current_room.queue_free()
 	post_inst.queue_free()
 	audio_node.queue_free()
+	if is_instance_valid(pause_inst):
+		pause_inst.queue_free()
 	if is_instance_valid(player):
 		player.queue_free()
 	for guard in get_tree().get_nodes_in_group("guard"):
@@ -124,6 +129,8 @@ func reset() -> void:
 	get_tree().root.add_child(player)
 	player.global_position.y = 2.777
 	player.global_rotation_degrees.y = -90
+	pause_inst = pause_menu.instantiate()
+	get_tree().root.add_child(pause_inst)
 	
 	# Load start room
 	var start_room : PackedScene = load("res://start_room.tscn")

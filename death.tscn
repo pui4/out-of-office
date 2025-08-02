@@ -11,6 +11,7 @@ shader_parameter/static_intensity = 0.25
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/tex_scale = 3.0
 shader_parameter/pixelation = 79.0
+shader_parameter/alpha = 1.0
 
 [sub_resource type="Animation" id="Animation_531me"]
 length = 0.001

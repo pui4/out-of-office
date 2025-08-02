@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx1f2vfajf5bu"]
+
+[ext_resource type="FontFile" uid="uid://dt7pnq7vqclll" path="res://Jersey10-Regular.ttf" id="1_dplge"]
+[ext_resource type="Script" uid="uid://cdfsbmwx2h0dh" path="res://scripts/pause_menu.gd" id="1_hmsig"]
+[ext_resource type="Shader" uid="uid://cb3mms08tbl4b" path="res://custom_shaders/noise_bg.gdshader" id="1_q2323"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hmsig"]
+shader = ExtResource("1_q2323")
+shader_parameter/scroll_speed = Vector2(3, 5)
+shader_parameter/static_intensity = 0.25
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/tex_scale = 3.0
+shader_parameter/pixelation = 32.0
+shader_parameter/alpha = 0.3
+
+[node name="PauseMenu" type="CanvasLayer" groups=["pause"]]
+process_mode = 3
+layer = 2
+visible = false
+script = ExtResource("1_hmsig")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_hmsig")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 142.76
+grow_horizontal = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_dplge")
+theme_override_font_sizes/normal_font_size = 121
+bbcode_enabled = true
+text = "[wave][center]PAUSED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.0
+offset_top = -96.5
+offset_right = 278.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_dplge")
+theme_override_font_sizes/font_size = 60
+text = "RESUME"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_dplge")
+theme_override_font_sizes/font_size = 60
+text = "SETTINGS"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_dplge")
+theme_override_font_sizes/font_size = 60
+text = "MAIN MENU"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="resume"]

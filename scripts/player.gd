@@ -44,9 +44,9 @@ func _input(event: InputEvent) -> void:
 			rotate_y(deg_to_rad(-event.relative.x * lookspeed))
 			target_head.rotate_x(deg_to_rad(-event.relative.y * lookspeed))
 			target_head.rotation.x = clamp(target_head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
-	elif event is InputEventKey:
-		if event.keycode == KEY_ESCAPE:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#elif event is InputEventKey:
+		#if event.keycode == KEY_ESCAPE:
+			#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _physics_process(delta: float) -> void:
 	# Setting cameras
