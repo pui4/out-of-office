@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dsu0ao84mfswy"]
+[gd_scene load_steps=23 format=3 uid="uid://dsu0ao84mfswy"]
 
 [ext_resource type="PackedScene" uid="uid://c3hmt28ay5iny" path="res://modules/open.tscn" id="1_n20gm"]
 [ext_resource type="Script" uid="uid://c8lcclhdhicva" path="res://scripts/intro.gd" id="1_pi5aw"]
@@ -9,9 +9,47 @@
 [ext_resource type="PackedScene" uid="uid://cb2uhy2hjanwe" path="res://modules/props/desk.tscn" id="6_c6n01"]
 [ext_resource type="PackedScene" uid="uid://c087u4snuwr1t" path="res://modules/props/pillar.tscn" id="7_7fbs8"]
 [ext_resource type="PackedScene" uid="uid://b6dxmnwdfk0r8" path="res://modules/props/big table.tscn" id="8_gch8k"]
-[ext_resource type="Texture2D" uid="uid://cw73a3kfxhe83" path="res://texture/tut.png" id="8_t4xlh"]
+[ext_resource type="Texture2D" uid="uid://ifhecocy70hv" path="res://tut-Sheet.png" id="8_t4xlh"]
+[ext_resource type="Script" uid="uid://dov0vlytj24lq" path="res://rooms/intro screen.gd" id="9_34tid"]
 [ext_resource type="PackedScene" uid="uid://b4pp12a0kbppq" path="res://assets/door.tscn" id="9_qbala"]
+[ext_resource type="Texture2D" uid="uid://db44jmgxvd6tq" path="res://tut buttons.png" id="10_ciwbf"]
 [ext_resource type="ArrayMesh" uid="uid://by4y5vyovn1ce" path="res://meshes/assets_exit sign.res" id="10_pi5aw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34tid"]
+atlas = ExtResource("8_t4xlh")
+region = Rect2(0, 0, 360, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciwbf"]
+atlas = ExtResource("8_t4xlh")
+region = Rect2(360, 0, 360, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xltfx"]
+atlas = ExtResource("8_t4xlh")
+region = Rect2(720, 0, 360, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5147"]
+atlas = ExtResource("8_t4xlh")
+region = Rect2(1080, 0, 360, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vh6j3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34tid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciwbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xltfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5147")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_qbala"]
 length = 0.001
@@ -54,7 +92,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_gch8k"]
 resource_name = "cutscene"
-length = 12.0
+length = 18.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -62,7 +100,7 @@ tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(6.86666, 7.26666, 7.46666, 9.53333, 9.69999, 9.83333, 9.99999, 11.1, 11.4, 11.5333, 11.8333),
+"times": PackedFloat32Array(12.7667, 13.1667, 13.3667, 15.4333, 15.6, 15.7333, 15.9, 17, 17.3, 17.4333, 17.7333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(1.46443, 1.44413, 1.95552), Vector3(0.194, 2.589, 1.306), Vector3(0.194, 2.589, 1.306), Vector3(0.194, 2.589, 1.306), Vector3(0.194, 2.589, 1.306), Vector3(-0.971, 3.174, 3.066), Vector3(-0.971, 2.244, 3.066), Vector3(-0.971, 2.244, 3.066), Vector3(-1.116, 2.274, 2.746), Vector3(-1.116, 2.274, 2.746), Vector3(-1.116, 2.3, 2.746)]
@@ -74,10 +112,10 @@ tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.63333, 5.56666, 5.89999, 6.56666, 6.79999, 7.26666, 7.49999, 7.79999, 8.03333, 8.36666, 8.63333, 8.86666, 8.99999, 9.16666, 9.69999, 9.79999, 9.99999, 10.3333, 10.9333, 11.1333, 11.3667, 11.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.0333333, 3.46667, 5.76667, 9.53333, 11.4667, 11.8, 12.4667, 12.7, 13.1667, 13.4, 13.7, 13.9333, 14.2667, 14.5333, 14.7667, 14.9, 15.0667, 15.6, 15.7, 15.9, 16.2333, 16.8333, 17.0333, 17.2667, 17.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -1.5708, 0), Vector3(0.0523599, -1.5708, 0.0261799), Vector3(-0.0174533, -1.5708, -0.0174533), Vector3(-0.0174533, -1.5708, -0.0174533), Vector3(-0.0174533, -1.5708, -0.0174533), Vector3(-0.139626, -1.5708, -0.0174533), Vector3(-0.0174533, -0.689405, 0.1309), Vector3(-0.0174533, -0.689405, 0.1309), Vector3(-0.0174533, -0.689405, 0.1309), Vector3(-0.0174533, -0.689405, 0.1309), Vector3(-0.0174533, 1.36834, -0.0959931), Vector3(-0.0174533, 1.62141, 0.1309), Vector3(-0.0174533, 1.62141, 0.1309), Vector3(-0.0174533, 1.62141, 0.1309), Vector3(-0.0174533, 1.62141, 0.1309), Vector3(-0.0174533, -0.877901, -0.015708), Vector3(0.279253, -0.877901, 0.122173), Vector3(0, -0.877901, -0.015708), Vector3(0, -0.877901, -0.015708), Vector3(0, -0.877901, -0.015708), Vector3(0, -0.877901, 0.174533), Vector3(0, -0.877901, 0.174533), Vector3(0, -0.877901, 0)]
+"values": [Vector3(0, -1.5708, 0), Vector3(0.0523599, -1.5708, 0.0261799), Vector3(0, -1.5708, 0), Vector3(0.0523599, -1.5708, 0.0261799), Vector3(-0.0174533, -1.5708, -0.0174533), Vector3(-0.0174533, -1.5708, -0.0174533), Vector3(-0.0174533, -1.5708, -0.0174533), Vector3(-0.139626, -1.5708, -0.0174533), Vector3(-0.0174533, -0.689405, 0.1309), Vector3(-0.0174533, -0.689405, 0.1309), Vector3(-0.0174533, -0.689405, 0.1309), Vector3(-0.0174533, -0.689405, 0.1309), Vector3(-0.0174533, 1.36834, -0.0959931), Vector3(-0.0174533, 1.62141, 0.1309), Vector3(-0.0174533, 1.62141, 0.1309), Vector3(-0.0174533, 1.62141, 0.1309), Vector3(-0.0174533, 1.62141, 0.1309), Vector3(-0.0174533, -0.877901, -0.015708), Vector3(0.279253, -0.877901, 0.122173), Vector3(0, -0.877901, -0.015708), Vector3(0, -0.877901, -0.015708), Vector3(0, -0.877901, -0.015708), Vector3(0, -0.877901, 0.174533), Vector3(0, -0.877901, 0.174533), Vector3(0, -0.877901, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -86,7 +124,7 @@ tracks/2/path = NodePath("Door:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(8.53333, 8.99999),
+"times": PackedFloat32Array(14.4333, 14.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(9.23244, -5, -6), Vector3(9.232, 0, -6)]
@@ -180,10 +218,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 8.0284
 [node name="Desk3" parent="staticprops" instance=ExtResource("6_c6n01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 2.02847)
 
-[node name="Sprite3D" type="Sprite3D" parent="staticprops/Desk3"]
-transform = Transform3D(-1.11914e-08, 0, -0.279963, 0, 0.256029, 0, 0.256029, 0, -1.22376e-08, 0.27678, 1.58869, -0.261014)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="staticprops/Desk3"]
+transform = Transform3D(-1.17147e-08, 0, -0.268, 0, 0.268, 0, 0.268, 0, -1.17147e-08, 0.3, 1.58664, -0.277247)
 texture_filter = 0
-texture = ExtResource("8_t4xlh")
+sprite_frames = SubResource("SpriteFrames_vh6j3")
+script = ExtResource("9_34tid")
+
+[node name="Sprite3D" type="Sprite3D" parent="staticprops/Desk3/AnimatedSprite3D"]
+transform = Transform3D(1.132, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("10_ciwbf")
 
 [node name="Desk4" parent="staticprops" instance=ExtResource("6_c6n01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97494, -4.76837e-07, 4.02847)
