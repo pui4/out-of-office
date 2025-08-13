@@ -4,7 +4,4 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("left") and frame > 0:
 		frame -= 1
 	if Input.is_action_just_pressed("right"):
-		if frame >= 3:
-			$"../../../cutscene props/AnimationPlayer".play("cutscene")
-		else:
-			frame += 1
+		frame += 1
